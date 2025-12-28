@@ -1,0 +1,659 @@
+[2/11/2025, 08:41:26] 📂 [registerBasicActions] Starting registration of basic actions
+[2/11/2025, 08:41:26] [ActionRunner] Initializing GlobalActionRunner singleton
+[2/11/2025, 08:41:26] [index.js] Action module exports initialized
+[2/11/2025, 08:41:26] ⚠️ [BasicActions] registration skipped: Cannot access '__WEBPACK_DEFAULT_EXPORT__' before initialization
+[2/11/2025, 08:41:26] 📂 [PageBuilder/index.js] File loaded
+[2/11/2025, 08:41:26] 📂 [Homepage.jsx] File started - Rendering public landing page
+[2/11/2025, 08:41:26] ✅ [Homepage.jsx] File executed successfully - user interface rendered
+[2/11/2025, 08:41:26] 📂 [SignUp.jsx] File started
+[2/11/2025, 08:41:26] ✅ [SignUp.jsx] File executed successfully
+[2/11/2025, 08:41:26] 📂 [Signin.jsx] File started
+[2/11/2025, 08:41:26] ✅ [Signin.jsx] File executed successfully
+[2/11/2025, 08:41:26] 📂 [PrivateRoute.jsx] File started
+[2/11/2025, 08:41:26] ✅ [PrivateRoute.jsx] File executed successfully
+[2/11/2025, 08:41:26] ⬅️ [PrivateRoute] Function end - redirecting
+[2/11/2025, 08:41:26] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:41:26] ⚠️ ⚠️ [PrivateRoute] User not authenticated - redirecting to Signin
+[2/11/2025, 08:41:26] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:41:26] ⚠️ ⚠️ [PrivateRoute] User not authenticated - redirecting to Signin
+[2/11/2025, 08:41:26] ⬅️ [PrivateRoute] Function end - redirecting
+[2/11/2025, 08:41:26] 🧭 [App.js] Navigated to: /page-builder
+[2/11/2025, 08:41:26] 📂 [App.js] Application started
+[2/11/2025, 08:41:26] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 08:41:26] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 08:41:26] 🧭 [App.js] Navigated to: /page-builder
+[2/11/2025, 08:41:26] 📂 [App.js] Application started
+[2/11/2025, 08:41:26] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 08:41:26] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 08:41:26] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:26] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:26] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:26] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:26] 🧭 [App.js] Navigated to: /signin
+[2/11/2025, 08:41:26] 🧠 [SignIn] useEffect init()
+[2/11/2025, 08:41:26] 🧠 [SignIn] useEffect init()
+[2/11/2025, 08:41:26] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:26] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:26] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:26] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:27] ✏️ [SignIn] Updating field {"field":"email"}
+[2/11/2025, 08:41:27] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:27] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:27] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:27] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:27] ✏️ [SignIn] Updating field {"field":"password"}
+[2/11/2025, 08:41:27] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:27] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:27] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:27] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:27] ➡️ [SignIn] onSubmit start
+[2/11/2025, 08:41:27] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:27] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:27] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:27] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:30] ✅ [SignIn] Login success {"uid":"zCfe1a96aLQON7KF9smnemHiJKu1","email":"ask.sagaram2@gmail.com","firstName":"vidya","lastName":"sagar","role":"appAdmin","createdAt":"2025-10-18T14:04:33.205Z"}
+[2/11/2025, 08:41:30] ⬅️ [SignIn] onSubmit end
+[2/11/2025, 08:41:30] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:30] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:30] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:41:30] ✅ [SignIn] Component rendered
+[2/11/2025, 08:41:30] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:41:30] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:41:30] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:41:30] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:41:30] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:41:30] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:41:30] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:41:30] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:41:30] 🧭 [App.js] Navigated to: /dashboard
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 08:41:30] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 08:41:30] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 08:41:30] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:41:30] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:41:30] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:41:30] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:41:30] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:42:08] 📂 [registerBasicActions] Starting registration of basic actions
+[2/11/2025, 08:42:08] ⚠️ [BasicActions] registration skipped: Cannot access '__WEBPACK_DEFAULT_EXPORT__' before initialization
+[2/11/2025, 08:42:08] [ActionRunner] Initializing GlobalActionRunner singleton
+[2/11/2025, 08:42:08] 📂 [PageBuilder/index.js] File loaded
+[2/11/2025, 08:42:08] [index.js] Action module exports initialized
+[2/11/2025, 08:42:08] 📂 [Homepage.jsx] File started - Rendering public landing page
+[2/11/2025, 08:42:08] ✅ [Homepage.jsx] File executed successfully - user interface rendered
+[2/11/2025, 08:42:08] 📂 [SignUp.jsx] File started
+[2/11/2025, 08:42:08] ✅ [SignUp.jsx] File executed successfully
+[2/11/2025, 08:42:08] ✅ [PrivateRoute.jsx] File executed successfully
+[2/11/2025, 08:42:08] 📂 [Signin.jsx] File started
+[2/11/2025, 08:42:08] ✅ [Signin.jsx] File executed successfully
+[2/11/2025, 08:42:08] 📂 [PrivateRoute.jsx] File started
+[2/11/2025, 08:42:08] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:42:08] ⚠️ ⚠️ [PrivateRoute] User not authenticated - redirecting to Signin
+[2/11/2025, 08:42:08] ⬅️ [PrivateRoute] Function end - redirecting
+[2/11/2025, 08:42:08] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:42:08] ⚠️ ⚠️ [PrivateRoute] User not authenticated - redirecting to Signin
+[2/11/2025, 08:42:08] ⬅️ [PrivateRoute] Function end - redirecting
+[2/11/2025, 08:42:08] 🧭 [App.js] Navigated to: /dashboard
+[2/11/2025, 08:42:08] 📂 [App.js] Application started
+[2/11/2025, 08:42:08] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 08:42:08] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 08:42:08] 🧭 [App.js] Navigated to: /dashboard
+[2/11/2025, 08:42:08] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:08] 📂 [App.js] Application started
+[2/11/2025, 08:42:08] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 08:42:08] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 08:42:08] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:08] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:08] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:08] 🧭 [App.js] Navigated to: /signin
+[2/11/2025, 08:42:08] 🧠 [SignIn] useEffect init()
+[2/11/2025, 08:42:08] 🧠 [SignIn] useEffect init()
+[2/11/2025, 08:42:08] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:08] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:08] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:08] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:09] ✏️ [SignIn] Updating field {"field":"email"}
+[2/11/2025, 08:42:09] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:09] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:09] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:09] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:09] ✏️ [SignIn] Updating field {"field":"password"}
+[2/11/2025, 08:42:09] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:10] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:10] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:10] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:10] ➡️ [SignIn] onSubmit start
+[2/11/2025, 08:42:10] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:10] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:10] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:10] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:11] ✅ [SignIn] Login success {"uid":"zCfe1a96aLQON7KF9smnemHiJKu1","email":"ask.sagaram2@gmail.com","firstName":"vidya","lastName":"sagar","role":"appAdmin","createdAt":"2025-10-18T14:04:33.205Z"}
+[2/11/2025, 08:42:11] ⬅️ [SignIn] onSubmit end
+[2/11/2025, 08:42:11] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:11] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:11] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:42:11] ✅ [SignIn] Component rendered
+[2/11/2025, 08:42:11] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:42:11] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:42:11] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:42:11] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:42:11] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:42:11] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:42:11] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:42:11] 🧭 [App.js] Navigated to: /dashboard
+[2/11/2025, 08:42:11] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:42:11] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 08:42:11] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 08:42:11] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:42:11] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:42:11] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:42:11] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:42:11] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:43:22] 📂 [registerBasicActions] Starting registration of basic actions
+[2/11/2025, 08:43:22] ⚠️ [BasicActions] registration skipped: Cannot access '__WEBPACK_DEFAULT_EXPORT__' before initialization
+[2/11/2025, 08:43:22] 📂 [Homepage.jsx] File started - Rendering public landing page
+[2/11/2025, 08:43:22] ✅ [Homepage.jsx] File executed successfully - user interface rendered
+[2/11/2025, 08:43:22] 📂 [SignUp.jsx] File started
+[2/11/2025, 08:43:22] [ActionRunner] Initializing GlobalActionRunner singleton
+[2/11/2025, 08:43:22] [index.js] Action module exports initialized
+[2/11/2025, 08:43:22] 📂 [PageBuilder/index.js] File loaded
+[2/11/2025, 08:43:22] ✅ [Signin.jsx] File executed successfully
+[2/11/2025, 08:43:22] 📂 [Signin.jsx] File started
+[2/11/2025, 08:43:22] ✅ [SignUp.jsx] File executed successfully
+[2/11/2025, 08:43:22] 📂 [PrivateRoute.jsx] File started
+[2/11/2025, 08:43:22] ✅ [PrivateRoute.jsx] File executed successfully
+[2/11/2025, 08:43:22] ➡️ [Homepage] Component start - initializing state and navigation
+[2/11/2025, 08:43:22] ✅ [Homepage] Component rendering started
+[2/11/2025, 08:43:22] ➡️ [Homepage] Component start - initializing state and navigation
+[2/11/2025, 08:43:22] ✅ [Homepage] Component rendering started
+[2/11/2025, 08:43:22] 🧭 [App.js] Navigated to: /
+[2/11/2025, 08:43:22] 📂 [App.js] Application started
+[2/11/2025, 08:43:22] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 08:43:22] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 08:43:22] 🧭 [App.js] Navigated to: /
+[2/11/2025, 08:43:22] 📂 [App.js] Application started
+[2/11/2025, 08:43:22] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 08:43:22] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 08:43:24] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:24] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:24] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:24] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:24] 🧭 [App.js] Navigated to: /signin
+[2/11/2025, 08:43:24] 🧠 [SignIn] useEffect init()
+[2/11/2025, 08:43:24] 🧠 [SignIn] useEffect init()
+[2/11/2025, 08:43:24] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:24] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:24] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:24] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:25] ✏️ [SignIn] Updating field {"field":"email"}
+[2/11/2025, 08:43:25] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:25] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:25] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:25] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:25] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:25] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:25] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:25] ✏️ [SignIn] Updating field {"field":"password"}
+[2/11/2025, 08:43:25] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:25] ➡️ [SignIn] onSubmit start
+[2/11/2025, 08:43:25] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:25] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:26] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:26] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:28] ✅ [SignIn] Login success {"uid":"zCfe1a96aLQON7KF9smnemHiJKu1","email":"ask.sagaram2@gmail.com","firstName":"vidya","lastName":"sagar","role":"appAdmin","createdAt":"2025-10-18T14:04:33.205Z"}
+[2/11/2025, 08:43:28] ⬅️ [SignIn] onSubmit end
+[2/11/2025, 08:43:28] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:28] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:28] ➡️ [SignIn] Component mounted
+[2/11/2025, 08:43:28] ✅ [SignIn] Component rendered
+[2/11/2025, 08:43:28] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:43:28] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:43:28] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:43:28] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:43:28] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:43:28] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:43:28] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:43:28] 🧭 [App.js] Navigated to: /dashboard
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 08:43:28] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 08:43:28] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 08:43:28] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 08:43:28] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:43:28] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:43:28] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:43:28] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:28] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 08:43:29] 📊 [Dashboard] Loaded 2 apps
+[2/11/2025, 08:43:29] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:29] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 08:43:29] 📊 [Dashboard] Loaded 2 apps
+[2/11/2025, 08:43:29] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:29] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 08:43:29] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 08:43:31] 📂 [AppCard] Edit button clicked for app: Rama2
+[2/11/2025, 08:43:31] 📂 [Dashboard] Edit button clicked for app: Rama2
+[2/11/2025, 08:43:31] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:43:31] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:43:31] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:43:31] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 08:43:31] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 08:43:31] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 08:43:31] ▶️ [PageBuilder] render start
+[2/11/2025, 08:43:31] ▶️ [PageBuilder] render start
+[2/11/2025, 08:43:31] 🧭 [App.js] Navigated to: /page-builder
+[2/11/2025, 08:43:31] 🔗 [PageBuilder] App from URL → Rama2
+[2/11/2025, 08:43:31] 🔗 [PageBuilder] App from URL → Rama2
+[2/11/2025, 08:43:31] ▶️ [PageBuilder] render start
+[2/11/2025, 08:43:31] ▶️ [PageBuilder] render start
+[2/11/2025, 08:43:37] 🧩 [PageBuilder] Opening FormBuilder
+[2/11/2025, 08:43:37] ▶️ [PageBuilder] render start
+[2/11/2025, 08:43:37] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 08:43:37] ▶️ [PageBuilder] render start
+[2/11/2025, 08:43:37] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] User selected form type: contact
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] handleSubmit called with selectedType: contact
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] Calling onSelectFormType with: contact
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] Selection sent to parent; parent handles closing
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 08:43:39] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 09:12:49] 📂 [registerBasicActions] Starting registration of basic actions
+[2/11/2025, 09:12:49] ⚠️ [BasicActions] registration skipped: Cannot access '__WEBPACK_DEFAULT_EXPORT__' before initialization
+[2/11/2025, 09:12:49] [ActionRunner] Initializing GlobalActionRunner singleton
+[2/11/2025, 09:12:49] [index.js] Action module exports initialized
+[2/11/2025, 09:20:08] 📂 [registerBasicActions] Starting registration of basic actions
+[2/11/2025, 09:20:08] [ActionRunner] Initializing GlobalActionRunner singleton
+[2/11/2025, 09:20:08] [index.js] Action module exports initialized
+[2/11/2025, 09:20:08] ⚠️ [BasicActions] registration skipped: Cannot access '__WEBPACK_DEFAULT_EXPORT__' before initialization
+[2/11/2025, 09:20:08] 📂 [PageBuilder/index.js] File loaded
+[2/11/2025, 09:20:08] 📂 [Homepage.jsx] File started - Rendering public landing page
+[2/11/2025, 09:20:08] ✅ [Homepage.jsx] File executed successfully - user interface rendered
+[2/11/2025, 09:20:08] 📂 [SignUp.jsx] File started
+[2/11/2025, 09:20:08] ✅ [SignUp.jsx] File executed successfully
+[2/11/2025, 09:20:08] 📂 [Signin.jsx] File started
+[2/11/2025, 09:20:08] ✅ [Signin.jsx] File executed successfully
+[2/11/2025, 09:20:08] 📂 [PrivateRoute.jsx] File started
+[2/11/2025, 09:20:08] ✅ [PrivateRoute.jsx] File executed successfully
+[2/11/2025, 09:20:08] ➡️ [Homepage] Component start - initializing state and navigation
+[2/11/2025, 09:20:08] ➡️ [Homepage] Component start - initializing state and navigation
+[2/11/2025, 09:20:08] ✅ [Homepage] Component rendering started
+[2/11/2025, 09:20:08] ✅ [Homepage] Component rendering started
+[2/11/2025, 09:20:08] 🧭 [App.js] Navigated to: /
+[2/11/2025, 09:20:08] 📂 [App.js] Application started
+[2/11/2025, 09:20:08] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 09:20:08] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 09:20:08] 🔧 [App.js] Environment setup complete {"env":"development"}
+[2/11/2025, 09:20:08] 🧭 [App.js] Navigated to: /
+[2/11/2025, 09:20:08] 📂 [App.js] Application started
+[2/11/2025, 09:20:08] 🧠 [App.js] Initializing routes and providers
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] 🧠 [SignIn] useEffect init()
+[2/11/2025, 09:21:36] 🧭 [App.js] Navigated to: /signin
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] 🧠 [SignIn] useEffect init()
+[2/11/2025, 09:21:36] ✏️ [SignIn] Updating field {"field":"email"}
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:36] ✏️ [SignIn] Updating field {"field":"password"}
+[2/11/2025, 09:21:36] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:36] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:37] ➡️ [SignIn] onSubmit start
+[2/11/2025, 09:21:37] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:37] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:37] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:37] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:39] ✅ [SignIn] Login success {"uid":"zCfe1a96aLQON7KF9smnemHiJKu1","email":"ask.sagaram2@gmail.com","firstName":"vidya","lastName":"sagar","role":"appAdmin","createdAt":"2025-10-18T14:04:33.205Z"}
+[2/11/2025, 09:21:39] ⬅️ [SignIn] onSubmit end
+[2/11/2025, 09:21:39] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:39] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:39] ➡️ [SignIn] Component mounted
+[2/11/2025, 09:21:39] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 09:21:39] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 09:21:39] ✅ [SignIn] Component rendered
+[2/11/2025, 09:21:39] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 09:21:39] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 09:21:39] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 09:21:39] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 09:21:39] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 09:21:39] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 09:21:39] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 09:21:39] 🧭 [App.js] Navigated to: /dashboard
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading apps for current user
+[2/11/2025, 09:21:39] 🔄 [Dashboard] Fetching apps from backend...zCfe1a96aLQON7KF9smnemHiJKu1
+[2/11/2025, 09:21:39] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 09:21:39] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 09:21:39] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 09:21:39] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:39] 📂 [Dashboard] Loading indicator shown
+[2/11/2025, 09:21:40] 📊 [Dashboard] Loaded 2 apps
+[2/11/2025, 09:21:40] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:40] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 09:21:40] 📊 [Dashboard] Loaded 2 apps
+[2/11/2025, 09:21:40] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:40] 📂 [Dashboard] Component mounted or updated
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama2
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 09:21:40] 📂 [AppCard] Rendering AppCard for app: Rama
+[2/11/2025, 09:21:42] 📂 [AppCard] Edit button clicked for app: Rama2
+[2/11/2025, 09:21:42] 📂 [Dashboard] Edit button clicked for app: Rama2
+[2/11/2025, 09:21:42] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 09:21:42] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 09:21:42] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 09:21:42] ➡️ [PrivateRoute] Function start - checking authentication
+[2/11/2025, 09:21:42] ✅ [PrivateRoute] User authenticated - access granted
+[2/11/2025, 09:21:42] ⬅️ [PrivateRoute] Function end - rendering child page
+[2/11/2025, 09:21:42] ▶️ [PageBuilder] render start
+[2/11/2025, 09:21:42] ▶️ [PageBuilder] render start
+[2/11/2025, 09:21:42] 🧭 [App.js] Navigated to: /page-builder
+[2/11/2025, 09:21:42] 🔗 [PageBuilder] App from URL → Rama2
+[2/11/2025, 09:21:42] 🔗 [PageBuilder] App from URL → Rama2
+[2/11/2025, 09:21:42] ▶️ [PageBuilder] render start
+[2/11/2025, 09:21:42] ▶️ [PageBuilder] render start
+[2/11/2025, 09:21:45] 🧩 [PageBuilder] Opening FormBuilder
+[2/11/2025, 09:21:45] ▶️ [PageBuilder] render start
+[2/11/2025, 09:21:45] ▶️ [PageBuilder] render start
+[2/11/2025, 09:21:45] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 09:21:45] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] User selected form type: contact
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] handleSubmit called with selectedType: contact
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] Selection sent to parent; parent handles closing
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] Calling onSelectFormType with: contact
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 09:21:47] 📂 [FormTypeModal] Modal component initialized
+[2/11/2025, 13:33:41] [ActionSelector] Initializing registry and UI
+[2/11/2025, 13:33:41] [ActionSelector] Registered Basic + Advanced actions
+[2/11/2025, 13:33:41] 📂 [registerBasicActions] Starting registration of basic actions
+[2/11/2025, 13:33:41] 📂 [registerBasicActions] Registration successful
+[2/11/2025, 13:33:41] [ActionSelector] Registered Basic + Advanced actions
+[2/11/2025, 13:33:41] [ActionSelector] Initializing registry and UI
+[2/11/2025, 13:33:41] 📂 [registerBasicActions] Registration successful
+[2/11/2025, 13:33:41] 📂 [registerBasicActions] Starting registration of basic actions
+[2/11/2025, 13:35:08] [ActionSelector] Action picked: validateForm
+[2/11/2025, 13:35:08] [ActionConfigForm] Getting action class for: validateForm
+[2/11/2025, 13:35:08] [ActionConfigForm] Getting action class for: validateForm
+[2/11/2025, 15:08:13] [UniversalFormPreview] Rendered - mode: builder
+[2/11/2025, 15:08:13] [UniversalFormPreview] Rendered - mode: builder
+[18/11/2025, 12:36:48] ❌ [AssetController] Upload failed [object Object]
+[18/11/2025, 12:36:58] ❌ [AssetController] Upload failed [object Object]
+[18/11/2025, 12:37:07] ❌ [AssetController] Upload failed [object Object]
+[18/11/2025, 12:37:52] ❌ [AssetController] Upload failed [object Object]
+[18/11/2025, 12:38:42] [AssetController] Upload request received {"appId":"TestApp123","fileName":"test-upload.png"}
+[18/11/2025, 12:38:42] [AssetService] Uploading asset {"originalName":"test-upload.png","appId":"TestApp123","mimeType":"image/png"}
+[18/11/2025, 12:38:43] ❌ [AssetService] Upload failed [object Object]
+[18/11/2025, 12:38:43] ❌ [AssetController] Upload failed [object Object]
+[18/11/2025, 12:43:26] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 12:43:26] [AssetController] Assets listed successfully {"appId":"hanuma","count":0}
+[18/11/2025, 12:43:26] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 12:43:26] [AssetController] Assets listed successfully {"appId":"hanuma","count":0}
+[18/11/2025, 12:43:38] [AssetController] Upload request received {"appId":"hanuma","fileName":"layout2.png"}
+[18/11/2025, 12:43:38] [AssetService] Uploading asset {"originalName":"layout2.png","appId":"hanuma","mimeType":"image/png"}
+[18/11/2025, 12:43:39] ❌ [AssetService] Upload failed [object Object]
+[18/11/2025, 12:43:39] ❌ [AssetController] Upload failed [object Object]
+[18/11/2025, 12:56:55] [AssetController] Upload request received {"appId":"TestApp123","fileName":"test-upload.png"}
+[18/11/2025, 12:56:56] [AssetService] Uploading asset {"originalName":"test-upload.png","appId":"TestApp123","mimeType":"image/png"}
+[18/11/2025, 12:56:58] ❌ [AssetService] Upload failed [object Object]
+[18/11/2025, 12:56:58] ❌ [AssetController] Upload failed [object Object]
+[18/11/2025, 12:57:40] [AssetController] Upload request received {"appId":"TestApp123","fileName":"test-upload.png"}
+[18/11/2025, 12:57:40] [AssetService] Uploading asset {"originalName":"test-upload.png","appId":"TestApp123","mimeType":"image/png"}
+[18/11/2025, 12:57:43] [AssetService] Asset uploaded successfully {"filePath":"apps/TestApp123/assets/test-upload_4f01af6d-544e-4202-a7ee-32a446c63346.png","size":"70"}
+[18/11/2025, 12:57:44] [AssetController] Asset uploaded and metadata saved {"assetId":"RlWpxwaB0MgcQZ1mmoKl","appId":"TestApp123"}
+[18/11/2025, 12:57:52] [AssetController] Upload request received {"appId":"TestApp123","fileName":"test-upload.png"}
+[18/11/2025, 12:57:52] [AssetService] Uploading asset {"originalName":"test-upload.png","appId":"TestApp123","mimeType":"image/png"}
+[18/11/2025, 12:57:55] [AssetService] Asset uploaded successfully {"filePath":"apps/TestApp123/assets/test-upload_849b78c6-d1cb-46b7-9e9c-5d7996da2936.png","size":"70"}
+[18/11/2025, 12:57:55] [AssetController] Asset uploaded and metadata saved {"assetId":"B06Nj2iGmJNl5oQnBkVE","appId":"TestApp123"}
+[18/11/2025, 12:58:10] [AssetController] List request received {"appId":"TestApp123"}
+[18/11/2025, 12:58:10] [AssetController] Assets listed successfully {"appId":"TestApp123","count":2}
+[18/11/2025, 12:58:14] [AssetController] Upload request received {"appId":"Rama2","fileName":"test-upload.png"}
+[18/11/2025, 12:58:14] [AssetService] Uploading asset {"originalName":"test-upload.png","appId":"Rama2","mimeType":"image/png"}
+[18/11/2025, 12:58:16] [AssetService] Asset uploaded successfully {"filePath":"apps/Rama2/assets/test-upload_5772669f-38dc-4e81-9249-5acfcb7cc7c0.png","size":"70"}
+[18/11/2025, 12:58:16] [AssetController] Asset uploaded and metadata saved {"assetId":"oWpoIUfyqJDJokSck6u2","appId":"Rama2"}
+[18/11/2025, 12:58:51] [AssetController] Upload request received {"appId":"TestApp123","fileName":"test-upload.png"}
+[18/11/2025, 12:58:51] [AssetService] Uploading asset {"originalName":"test-upload.png","appId":"TestApp123","mimeType":"image/png"}
+[18/11/2025, 12:58:54] [AssetService] Asset uploaded successfully {"filePath":"apps/TestApp123/assets/test-upload_454b8617-73c9-4231-896e-530a8e01dd25.png","size":"70"}
+[18/11/2025, 12:58:54] [AssetController] Asset uploaded and metadata saved {"assetId":"36wuoHXH5Uelv0vgNlIs","appId":"TestApp123"}
+[18/11/2025, 12:58:54] [AssetController] List request received {"appId":"TestApp123"}
+[18/11/2025, 12:58:54] [AssetController] Assets listed successfully {"appId":"TestApp123","count":3}
+[18/11/2025, 12:58:54] [AssetController] Get asset request {"appId":"TestApp123","assetId":"36wuoHXH5Uelv0vgNlIs"}
+[18/11/2025, 12:58:54] [AssetController] Asset retrieved successfully {"assetId":"36wuoHXH5Uelv0vgNlIs"}
+[18/11/2025, 12:58:54] [AssetController] Update metadata request {"appId":"TestApp123","assetId":"36wuoHXH5Uelv0vgNlIs"}
+[18/11/2025, 12:58:55] [AssetController] Asset metadata updated successfully {"assetId":"36wuoHXH5Uelv0vgNlIs"}
+[18/11/2025, 12:58:55] [AssetController] Delete request received {"appId":"TestApp123","assetId":"36wuoHXH5Uelv0vgNlIs"}
+[18/11/2025, 12:58:55] [AssetService] Deleting asset {"filePath":"apps/TestApp123/assets/test-upload_454b8617-73c9-4231-896e-530a8e01dd25.png"}
+[18/11/2025, 12:58:55] [AssetService] Asset deleted successfully {"filePath":"apps/TestApp123/assets/test-upload_454b8617-73c9-4231-896e-530a8e01dd25.png"}
+[18/11/2025, 12:58:55] [AssetController] Asset deleted successfully {"assetId":"36wuoHXH5Uelv0vgNlIs"}
+[18/11/2025, 12:59:25] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 12:59:26] [AssetController] Assets listed successfully {"appId":"hanuma","count":0}
+[18/11/2025, 12:59:26] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 12:59:26] [AssetController] Assets listed successfully {"appId":"hanuma","count":0}
+[18/11/2025, 12:59:32] [AssetController] Upload request received {"appId":"hanuma","fileName":"layout1.png"}
+[18/11/2025, 12:59:32] [AssetService] Uploading asset {"originalName":"layout1.png","appId":"hanuma","mimeType":"image/png"}
+[18/11/2025, 12:59:36] [AssetService] Asset uploaded successfully {"filePath":"apps/hanuma/assets/layout1_75bccbe5-d74c-421d-8656-37f865be035c.png","size":"15663"}
+[18/11/2025, 12:59:37] [AssetController] Asset uploaded and metadata saved {"assetId":"hOrmUVsgtUu8U6FGMFfB","appId":"hanuma"}
+[18/11/2025, 13:08:51] [AssetController] Update metadata request {"appId":"hanuma","assetId":"hOrmUVsgtUu8U6FGMFfB"}
+[18/11/2025, 13:08:51] [AssetController] Asset metadata updated successfully {"assetId":"hOrmUVsgtUu8U6FGMFfB"}
+[18/11/2025, 13:50:10] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 13:50:11] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[18/11/2025, 13:50:11] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 13:50:11] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[18/11/2025, 14:05:47] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 14:05:48] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[18/11/2025, 14:05:48] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 14:05:48] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[18/11/2025, 14:06:39] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 14:06:39] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[18/11/2025, 14:13:19] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 14:13:19] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[18/11/2025, 14:13:23] [AssetController] List request received {"appId":"hanuma"}
+[18/11/2025, 14:13:23] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[23/11/2025, 15:17:56] [AssetController] List request received {"appId":"hanuma"}
+[23/11/2025, 15:17:56] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[23/11/2025, 15:17:56] [AssetController] List request received {"appId":"hanuma"}
+[23/11/2025, 15:17:56] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[23/11/2025, 15:51:26] [AssetController] List request received {"appId":"hanuma"}
+[23/11/2025, 15:51:26] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[23/11/2025, 15:51:26] [AssetController] List request received {"appId":"hanuma"}
+[23/11/2025, 15:51:26] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[25/12/2025, 14:03:20] [AssetController] List request received {"appId":"hanuma"}
+[25/12/2025, 14:03:20] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[25/12/2025, 14:03:20] [AssetController] List request received {"appId":"hanuma"}
+[25/12/2025, 14:03:20] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[25/12/2025, 14:14:55] [AssetController] List request received {"appId":"sample"}
+[25/12/2025, 14:14:56] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[25/12/2025, 14:14:56] [AssetController] List request received {"appId":"sample"}
+[25/12/2025, 14:14:56] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[25/12/2025, 14:44:48] [AssetController] List request received {"appId":"sample"}
+[25/12/2025, 14:44:49] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[25/12/2025, 14:44:49] [AssetController] List request received {"appId":"sample"}
+[25/12/2025, 14:44:49] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[25/12/2025, 14:44:51] [AssetController] List request received {"appId":"sample"}
+[25/12/2025, 14:44:51] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[25/12/2025, 14:44:51] [AssetController] List request received {"appId":"sample"}
+[25/12/2025, 14:44:51] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[27/12/2025, 21:06:29] [AssetController] List request received {"appId":"sample"}
+[27/12/2025, 21:06:29] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[27/12/2025, 21:06:30] [AssetController] List request received {"appId":"sample"}
+[27/12/2025, 21:06:30] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[28/12/2025, 14:12:31] [AssetController] List request received {"appId":"sample"}
+[28/12/2025, 14:12:32] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[28/12/2025, 14:12:32] [AssetController] List request received {"appId":"sample"}
+[28/12/2025, 14:12:32] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[28/12/2025, 14:12:53] [AssetController] Upload request received {"appId":"sample","fileName":"layout1.png"}
+[28/12/2025, 14:12:53] [AssetService] Uploading asset {"originalName":"layout1.png","appId":"sample","mimeType":"image/png"}
+[28/12/2025, 14:12:54] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:12:54] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:22:03] [AssetController] List request received {"appId":"sample"}
+[28/12/2025, 14:22:04] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[28/12/2025, 14:22:04] [AssetController] List request received {"appId":"sample"}
+[28/12/2025, 14:22:04] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[28/12/2025, 14:22:34] [AssetController] Upload request received {"appId":"sample","fileName":"img1.jpeg"}
+[28/12/2025, 14:22:34] [AssetService] Uploading asset {"originalName":"img1.jpeg","appId":"sample","mimeType":"image/jpeg"}
+[28/12/2025, 14:22:36] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:22:36] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:22:38] [AssetController] Upload request received {"appId":"sample","fileName":"img1.jpeg"}
+[28/12/2025, 14:22:38] [AssetService] Uploading asset {"originalName":"img1.jpeg","appId":"sample","mimeType":"image/jpeg"}
+[28/12/2025, 14:22:39] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:22:39] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:22:39] [AssetController] Upload request received {"appId":"sample","fileName":"img1.jpeg"}
+[28/12/2025, 14:22:39] [AssetService] Uploading asset {"originalName":"img1.jpeg","appId":"sample","mimeType":"image/jpeg"}
+[28/12/2025, 14:22:40] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:22:40] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:23:41] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:23:41] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:23:42] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:23:42] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:24:06] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:24:06] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:24:07] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:24:07] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:24:45] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:24:45] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:24:45] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:24:51] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:24:51] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:24:52] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:24:52] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:26:14] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:26:14] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:26:14] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:31:50] [AssetController] List request received {"appId":"hanuma"}
+[28/12/2025, 14:31:50] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[28/12/2025, 14:31:50] [AssetController] List request received {"appId":"hanuma"}
+[28/12/2025, 14:31:50] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[28/12/2025, 14:32:02] [AssetController] Upload request received {"appId":"hanuma","fileName":"layout4.png"}
+[28/12/2025, 14:32:02] [AssetService] Uploading asset {"originalName":"layout4.png","appId":"hanuma","mimeType":"image/png"}
+[28/12/2025, 14:32:03] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:32:03] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:32:06] [AssetController] Upload request received {"appId":"hanuma","fileName":"layout4.png"}
+[28/12/2025, 14:32:06] [AssetService] Uploading asset {"originalName":"layout4.png","appId":"hanuma","mimeType":"image/png"}
+[28/12/2025, 14:32:07] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:32:07] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:33:43] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:33:44] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:33:44] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:33:49] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:33:49] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:33:50] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:33:50] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:34:06] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:34:06] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:34:07] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:34:07] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:34:21] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:34:32] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:34:32] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:34:34] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:34:34] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:34:58] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:35:37] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:35:47] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:35:47] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:35:48] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:35:48] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:35:56] [AssetController] List request received {"appId":"sample"}
+[28/12/2025, 14:35:57] [AssetController] Assets listed successfully {"appId":"sample","count":0}
+[28/12/2025, 14:36:19] [AssetController] Upload request received {"appId":"Rama2","fileName":"test-asset.txt"}
+[28/12/2025, 14:36:19] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"Rama2","mimeType":"text/plain"}
+[28/12/2025, 14:36:20] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:36:20] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:36:31] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:36:34] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:36:34] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:36:36] ❌ [AssetService] Upload failed [object Object]
+[28/12/2025, 14:36:36] ❌ [AssetController] Upload failed [object Object]
+[28/12/2025, 14:38:41] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:52:34] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:52:49] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:52:55] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:53:06] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:53:16] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:54:20] [AssetService] Initialized with bucket: "wordfun-dcd3b.appspot.com"
+[28/12/2025, 14:55:37] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[28/12/2025, 14:55:51] [AssetController] Upload request received {"appId":"sample","fileName":"test-asset.txt"}
+[28/12/2025, 14:55:51] [AssetService] Uploading asset {"originalName":"test-asset.txt","appId":"sample","mimeType":"text/plain"}
+[28/12/2025, 14:56:04] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[28/12/2025, 14:56:04] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[28/12/2025, 14:56:04] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[28/12/2025, 15:18:44] [AssetController] List request received {"appId":"hanuma"}
+[28/12/2025, 15:18:44] [AssetController] Assets listed successfully {"appId":"hanuma","count":1}
+[28/12/2025, 15:23:39] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:23:39] [AssetController] Assets listed successfully {"appId":"myshopy","count":0}
+[28/12/2025, 15:23:39] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:23:40] [AssetController] Assets listed successfully {"appId":"myshopy","count":0}
+[28/12/2025, 15:24:00] [AssetController] Upload request received {"appId":"myshopy","fileName":"img1.jpeg"}
+[28/12/2025, 15:24:00] [AssetService] Uploading asset {"originalName":"img1.jpeg","appId":"myshopy","mimeType":"image/jpeg"}
+[28/12/2025, 15:24:03] [AssetService] Asset uploaded successfully {"filePath":"apps/myshopy/assets/images/img1_938fa375-8b89-4f0b-8750-3521dcde096a.jpeg","size":"19574","assetType":"images"}
+[28/12/2025, 15:24:03] [AssetController] Asset uploaded and metadata saved {"assetId":"lhGAVF7x8oubDakEwn8x","appId":"myshopy"}
+[28/12/2025, 15:24:21] [AssetController] Upload request received {"appId":"myshopy","fileName":"img2.jpeg"}
+[28/12/2025, 15:24:21] [AssetService] Uploading asset {"originalName":"img2.jpeg","appId":"myshopy","mimeType":"image/jpeg"}
+[28/12/2025, 15:24:23] [AssetService] Asset uploaded successfully {"filePath":"apps/myshopy/assets/images/img2_f3eed5d0-1a34-4f39-9239-c6711295ab6d.jpeg","size":"14235","assetType":"images"}
+[28/12/2025, 15:24:24] [AssetController] Asset uploaded and metadata saved {"assetId":"gQmWukGTaEiAaBaDwd7Y","appId":"myshopy"}
+[28/12/2025, 15:24:57] [AssetController] Upload request received {"appId":"myshopy","fileName":"51615960_FormANNX_2020_1.pdf"}
+[28/12/2025, 15:24:57] [AssetService] Uploading asset {"originalName":"51615960_FormANNX_2020_1.pdf","appId":"myshopy","mimeType":"application/pdf"}
+[28/12/2025, 15:25:03] [AssetService] Asset uploaded successfully {"filePath":"apps/myshopy/assets/documents/51615960_FormANNX_2020_1_1f273134-df64-42ed-a546-39502d57108f.pdf","size":"4287860","assetType":"documents"}
+[28/12/2025, 15:25:03] [AssetController] Asset uploaded and metadata saved {"assetId":"7SVnwNNes4cNQcKAmRMk","appId":"myshopy"}
+[28/12/2025, 15:41:35] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:41:35] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 15:41:35] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:41:35] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 15:42:28] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:42:28] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 15:42:28] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:42:28] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 15:42:54] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:42:54] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 15:42:54] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:42:54] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 15:43:01] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:43:01] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 15:43:01] [AssetController] List request received {"appId":"myshopy"}
+[28/12/2025, 15:43:01] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}

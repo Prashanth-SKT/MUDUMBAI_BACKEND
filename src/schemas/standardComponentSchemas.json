@@ -1,0 +1,306 @@
+{
+  "version": "1.0.0",
+  "description": "Standardized component schemas based on hanuma app structure",
+  
+  "commonAttrs": {
+    "description": "Standard styling attributes for ALL components (REQUIRED)",
+    "required": true,
+    "properties": {
+      "width": {
+        "type": "string",
+        "default": "100",
+        "examples": ["100", "50", "auto", "200px"]
+      },
+      "height": {
+        "type": "string",
+        "default": "auto",
+        "examples": ["auto", "100", "200px", "50vh"]
+      },
+      "paddingTop": {
+        "type": "string",
+        "default": "16",
+        "examples": ["0", "8", "16", "24", "32"]
+      },
+      "paddingBottom": {
+        "type": "string",
+        "default": "16",
+        "examples": ["0", "8", "16", "24", "32"]
+      },
+      "paddingLeft": {
+        "type": "string",
+        "default": "16",
+        "examples": ["0", "8", "16", "24", "32"]
+      },
+      "paddingRight": {
+        "type": "string",
+        "default": "16",
+        "examples": ["0", "8", "16", "24", "32"]
+      },
+      "marginTop": {
+        "type": "string",
+        "default": "0",
+        "examples": ["0", "8", "16", "24", "32"]
+      },
+      "marginBottom": {
+        "type": "string",
+        "default": "16",
+        "examples": ["0", "8", "16", "24", "32"]
+      },
+      "marginLeft": {
+        "type": "string",
+        "default": "0",
+        "examples": ["0", "8", "16", "24", "auto"]
+      },
+      "marginRight": {
+        "type": "string",
+        "default": "0",
+        "examples": ["0", "8", "16", "24", "auto"]
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "transparent",
+        "examples": ["transparent", "#ffffff", "#f0f0f0", "rgba(0,0,0,0.1)"]
+      },
+      "borderRadius": {
+        "type": "string",
+        "default": "8",
+        "examples": ["0", "4", "8", "12", "16", "50%"]
+      },
+      "boxShadow": {
+        "type": "string",
+        "default": "none",
+        "examples": ["none", "0 2px 4px rgba(0,0,0,0.1)", "0 4px 8px rgba(0,0,0,0.15)"]
+      }
+    }
+  },
+
+  "componentTypes": {
+    "form": {
+      "description": "Form component with fields, validation, and actions",
+      "specificAttrs": {
+        "required": ["formType", "title", "description", "submitLabel", "fields", "ui", "actions"],
+        "properties": {
+          "formType": {
+            "type": "string",
+            "enum": ["Contact", "Signup", "Login", "Survey", "Newsletter"],
+            "default": "Contact"
+          },
+          "title": {
+            "type": "string",
+            "examples": ["Contact Us", "Sign Up", "Get in Touch"]
+          },
+          "description": {
+            "type": "string",
+            "examples": ["We'd love to hear from you", "Join our community"]
+          },
+          "submitLabel": {
+            "type": "string",
+            "default": "Submit",
+            "examples": ["Send Message", "Sign Up", "Subscribe"]
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "required": ["id", "label", "type", "required", "validation", "dataSource", "visibility", "defaultValue"],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "examples": ["name", "email", "message", "phone"]
+                },
+                "label": {
+                  "type": "string",
+                  "examples": ["Your Name", "Email Address", "Message"]
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["text", "email", "textarea", "number", "tel", "url", "select", "checkbox", "radio"]
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "validation": {
+                  "type": "object",
+                  "properties": {
+                    "minLength": {"type": "number"},
+                    "maxLength": {"type": "number"},
+                    "pattern": {"type": "string", "examples": ["email", "phone"]},
+                    "customMessage": {"type": "string"}
+                  }
+                },
+                "dataSource": {
+                  "type": "object",
+                  "properties": {
+                    "type": {"type": "string", "enum": ["manual", "api", "database"]}
+                  }
+                },
+                "visibility": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "defaultValue": {
+                  "type": "string",
+                  "default": ""
+                }
+              }
+            }
+          },
+          "ui": {
+            "type": "object",
+            "properties": {
+              "themeTokens": {"type": "string", "default": "default"},
+              "spacingHints": {"type": "string", "default": "responsive"}
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "action": {"type": "string", "enum": ["showMessage", "validateForm", "submitForm", "navigateTo"]},
+                "title": {"type": "string"},
+                "message": {"type": "string"},
+                "buttonText": {"type": "string"},
+                "autoClose": {"type": "number"}
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "button": {
+      "description": "Button component with action trigger",
+      "specificAttrs": {
+        "required": ["label", "action", "variant"],
+        "properties": {
+          "label": {
+            "type": "string",
+            "examples": ["Click Me", "Learn More", "Get Started"]
+          },
+          "action": {
+            "type": "string",
+            "enum": ["openPage", "showMessage", "submitForm", "navigateTo"]
+          },
+          "variant": {
+            "type": "string",
+            "enum": ["primary", "secondary", "outline", "text"],
+            "default": "primary"
+          },
+          "url": {
+            "type": "string",
+            "examples": ["/about", "https://example.com"]
+          },
+          "newTab": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    },
+
+    "text": {
+      "description": "Text content (heading, paragraph, label)",
+      "specificAttrs": {
+        "required": ["content", "variant"],
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "variant": {
+            "type": "string",
+            "enum": ["h1", "h2", "h3", "h4", "h5", "h6", "paragraph", "label", "span"],
+            "default": "paragraph"
+          },
+          "fontSize": {
+            "type": "string",
+            "examples": ["12px", "14px", "16px", "18px", "24px", "32px"]
+          },
+          "fontWeight": {
+            "type": "string",
+            "enum": ["normal", "bold", "300", "400", "500", "600", "700"],
+            "default": "normal"
+          },
+          "textAlign": {
+            "type": "string",
+            "enum": ["left", "center", "right", "justify"],
+            "default": "left"
+          },
+          "color": {
+            "type": "string",
+            "examples": ["#000000", "#333333", "#666666", "#999999"]
+          }
+        }
+      }
+    },
+
+    "card": {
+      "description": "Card container with title, description, and optional content",
+      "specificAttrs": {
+        "required": ["title", "description"],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string",
+            "examples": ["/images/placeholder.jpg", "https://example.com/image.jpg"]
+          },
+          "link": {
+            "type": "string"
+          },
+          "linkText": {
+            "type": "string",
+            "default": "Learn More"
+          }
+        }
+      }
+    },
+
+    "image": {
+      "description": "Image with source, alt text, and caption",
+      "specificAttrs": {
+        "required": ["src", "alt"],
+        "properties": {
+          "src": {
+            "type": "string",
+            "examples": ["/images/hero.jpg", "https://via.placeholder.com/800x600"]
+          },
+          "alt": {
+            "type": "string"
+          },
+          "caption": {
+            "type": "string"
+          },
+          "width": {
+            "type": "string",
+            "examples": ["100%", "800px", "auto"]
+          },
+          "height": {
+            "type": "string",
+            "examples": ["auto", "400px", "100vh"]
+          }
+        }
+      }
+    }
+  },
+
+  "layoutTypes": {
+    "two-column": "Two column grid layout",
+    "three-column": "Three column grid layout",
+    "single-column": "Single column stack",
+    "hero-split": "Hero section with split content",
+    "grid-12": "12 column grid"
+  },
+
+  "themeTypes": {
+    "modern": "Modern clean theme",
+    "classic": "Classic traditional theme",
+    "minimal": "Minimal theme",
+    "bold": "Bold colorful theme"
+  }
+}
+
+
+

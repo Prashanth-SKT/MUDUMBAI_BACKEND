@@ -1,0 +1,847 @@
+{
+	"info": {
+		"_postman_id": "asset-mgmt-collection-2025",
+		"name": "Asset Management API",
+		"description": "Complete API collection for managing assets with type-based folder organization.\n\nFeatures:\n- Upload assets with auto type detection\n- List all assets or filter by type (images, videos, documents, audio, other)\n- Update asset metadata\n- Delete assets\n- Generate signed URLs\n\nFolder Structure:\nApps/{appId}/assets/{type}/{filename}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Upload Asset",
+			"item": [
+				{
+					"name": "Upload Image (Auto-detect)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/path/to/your/image.png",
+									"description": "The image file to upload"
+								},
+								{
+									"key": "appId",
+									"value": "sample",
+									"type": "text",
+									"description": "Application ID"
+								},
+								{
+									"key": "description",
+									"value": "Product hero image for homepage",
+									"type": "text",
+									"description": "Optional description"
+								},
+								{
+									"key": "uploadedBy",
+									"value": "user-123",
+									"type": "text",
+									"description": "Optional user ID"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/assets/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"upload"
+							]
+						},
+						"description": "Upload an image file. The system automatically detects it's an image and stores it in `apps/sample/assets/images/` folder."
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/path/to/image.png"
+										},
+										{
+											"key": "appId",
+											"value": "sample",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/assets/upload",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										"upload"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"asset_abc123xyz\",\n        \"name\": \"image.png\",\n        \"path\": \"apps/sample/assets/images/image_uuid-1234.png\",\n        \"downloadURL\": \"https://storage.googleapis.com/wordfun-dcd3b.firebasestorage.app/apps/sample/assets/images/image_uuid-1234.png\",\n        \"fileType\": \"image/png\",\n        \"assetType\": \"images\",\n        \"size\": 45678,\n        \"uploadedAt\": \"2025-12-28T10:30:00.000Z\",\n        \"uploadedBy\": \"user-123\",\n        \"description\": \"Product hero image\",\n        \"appId\": \"sample\",\n        \"createdAt\": \"2025-12-28T10:30:00.000Z\",\n        \"updatedAt\": \"2025-12-28T10:30:00.000Z\"\n    },\n    \"message\": \"Asset uploaded successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload Video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/path/to/your/video.mp4",
+									"description": "Video file"
+								},
+								{
+									"key": "appId",
+									"value": "sample",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Product demo video",
+									"type": "text"
+								},
+								{
+									"key": "uploadedBy",
+									"value": "user-123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/assets/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"upload"
+							]
+						},
+						"description": "Upload a video file. Automatically stored in `apps/sample/assets/videos/` folder."
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Document (PDF)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/path/to/your/document.pdf",
+									"description": "PDF file"
+								},
+								{
+									"key": "appId",
+									"value": "sample",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "User manual version 2.0",
+									"type": "text"
+								},
+								{
+									"key": "uploadedBy",
+									"value": "user-456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/assets/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"upload"
+							]
+						},
+						"description": "Upload a PDF document. Automatically stored in `apps/sample/assets/documents/` folder."
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Audio File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/path/to/your/audio.mp3"
+								},
+								{
+									"key": "appId",
+									"value": "sample",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Notification sound",
+									"type": "text"
+								},
+								{
+									"key": "uploadedBy",
+									"value": "user-789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/assets/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"upload"
+							]
+						},
+						"description": "Upload an audio file. Automatically stored in `apps/sample/assets/audio/` folder."
+					},
+					"response": []
+				},
+				{
+					"name": "Upload with Manual Type Override",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/path/to/custom.dat"
+								},
+								{
+									"key": "appId",
+									"value": "sample",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Custom data file treated as image",
+									"type": "text"
+								},
+								{
+									"key": "uploadedBy",
+									"value": "user-123",
+									"type": "text"
+								},
+								{
+									"key": "assetType",
+									"value": "images",
+									"type": "text",
+									"description": "Force storage in images folder"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/assets/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"upload"
+							]
+						},
+						"description": "Upload a file and manually specify the asset type folder. Useful for custom file formats."
+					},
+					"response": []
+				}
+			],
+			"description": "Upload assets with automatic type detection and organization into folders (images, videos, documents, audio, other)."
+		},
+		{
+			"name": "2. List Assets",
+			"item": [
+				{
+					"name": "List All Assets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:appId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":appId"
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": "sample",
+									"description": "Application ID"
+								}
+							]
+						},
+						"description": "Get all assets for an application, regardless of type."
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/sample",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										"sample"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"OK\",\n    \"data\": {\n        \"assets\": [\n            {\n                \"id\": \"asset_001\",\n                \"name\": \"logo.png\",\n                \"path\": \"apps/sample/assets/images/logo_uuid-1234.png\",\n                \"downloadURL\": \"https://storage.googleapis.com/wordfun-dcd3b.firebasestorage.app/apps/sample/assets/images/logo_uuid-1234.png\",\n                \"fileType\": \"image/png\",\n                \"assetType\": \"images\",\n                \"size\": 12345,\n                \"uploadedAt\": \"2025-12-28T09:00:00.000Z\",\n                \"uploadedBy\": \"user-123\",\n                \"description\": \"Company logo\",\n                \"appId\": \"sample\"\n            },\n            {\n                \"id\": \"asset_002\",\n                \"name\": \"manual.pdf\",\n                \"path\": \"apps/sample/assets/documents/manual_uuid-5678.pdf\",\n                \"downloadURL\": \"https://storage.googleapis.com/wordfun-dcd3b.firebasestorage.app/apps/sample/assets/documents/manual_uuid-5678.pdf\",\n                \"fileType\": \"application/pdf\",\n                \"assetType\": \"documents\",\n                \"size\": 234567,\n                \"uploadedAt\": \"2025-12-28T09:15:00.000Z\",\n                \"uploadedBy\": \"user-456\",\n                \"description\": \"User manual\",\n                \"appId\": \"sample\"\n            }\n        ],\n        \"count\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Only Images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:appId?type=images",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":appId"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "images",
+									"description": "Filter by asset type"
+								}
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": "sample"
+								}
+							]
+						},
+						"description": "Get only image assets (PNG, JPG, GIF, SVG, WebP, etc.)."
+					},
+					"response": []
+				},
+				{
+					"name": "List Only Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:appId?type=videos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":appId"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "videos"
+								}
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": "sample"
+								}
+							]
+						},
+						"description": "Get only video assets (MP4, WebM, AVI, MOV, etc.)."
+					},
+					"response": []
+				},
+				{
+					"name": "List Only Documents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:appId?type=documents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":appId"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "documents"
+								}
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": "sample"
+								}
+							]
+						},
+						"description": "Get only document assets (PDF, DOC, DOCX, TXT, JSON, XLS, XLSX, etc.)."
+					},
+					"response": []
+				},
+				{
+					"name": "List Only Audio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:appId?type=audio",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":appId"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "audio"
+								}
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": "sample"
+								}
+							]
+						},
+						"description": "Get only audio assets (MP3, WAV, OGG, M4A, etc.)."
+					},
+					"response": []
+				},
+				{
+					"name": "List Other Files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:appId?type=other",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":appId"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "other"
+								}
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": "sample"
+								}
+							]
+						},
+						"description": "Get all other file types that don't fit into the main categories."
+					},
+					"response": []
+				}
+			],
+			"description": "List assets with optional filtering by type (images, videos, documents, audio, other)."
+		},
+		{
+			"name": "3. Get Single Asset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/assets/:appId/:assetId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"assets",
+						":appId",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "appId",
+							"value": "sample",
+							"description": "Application ID"
+						},
+						{
+							"key": "assetId",
+							"value": "asset_abc123xyz",
+							"description": "Asset ID to retrieve"
+						}
+					]
+				},
+				"description": "Get details of a single asset by its ID."
+			},
+			"response": [
+				{
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/sample/asset_abc123xyz",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"sample",
+								"asset_abc123xyz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"OK\",\n    \"data\": {\n        \"id\": \"asset_abc123xyz\",\n        \"name\": \"logo.png\",\n        \"path\": \"apps/sample/assets/images/logo_uuid-1234.png\",\n        \"downloadURL\": \"https://storage.googleapis.com/wordfun-dcd3b.firebasestorage.app/apps/sample/assets/images/logo_uuid-1234.png\",\n        \"fileType\": \"image/png\",\n        \"assetType\": \"images\",\n        \"size\": 12345,\n        \"uploadedAt\": \"2025-12-28T09:00:00.000Z\",\n        \"uploadedBy\": \"user-123\",\n        \"description\": \"Company logo\",\n        \"appId\": \"sample\",\n        \"createdAt\": \"2025-12-28T09:00:00.000Z\",\n        \"updatedAt\": \"2025-12-28T09:00:00.000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "4. Update Asset Metadata",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Updated company logo for 2025\",\n    \"name\": \"New Logo Design\",\n    \"visible\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/assets/:appId/:assetId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"assets",
+						":appId",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "appId",
+							"value": "sample"
+						},
+						{
+							"key": "assetId",
+							"value": "asset_abc123xyz"
+						}
+					]
+				},
+				"description": "Update asset metadata (description, name, visibility). The file itself is not changed."
+			},
+			"response": [
+				{
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Updated description\",\n    \"name\": \"New Name\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/assets/sample/asset_abc123xyz",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"sample",
+								"asset_abc123xyz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Asset metadata updated successfully\",\n    \"data\": {\n        \"id\": \"asset_abc123xyz\",\n        \"name\": \"New Name\",\n        \"path\": \"apps/sample/assets/images/logo_uuid-1234.png\",\n        \"downloadURL\": \"https://storage.googleapis.com/wordfun-dcd3b.firebasestorage.app/apps/sample/assets/images/logo_uuid-1234.png\",\n        \"fileType\": \"image/png\",\n        \"assetType\": \"images\",\n        \"size\": 12345,\n        \"uploadedAt\": \"2025-12-28T09:00:00.000Z\",\n        \"uploadedBy\": \"user-123\",\n        \"description\": \"Updated description\",\n        \"visible\": true,\n        \"appId\": \"sample\",\n        \"updatedAt\": \"2025-12-28T10:45:00.000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "5. Delete Asset",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/assets/:appId/:assetId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"assets",
+						":appId",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "appId",
+							"value": "sample"
+						},
+						{
+							"key": "assetId",
+							"value": "asset_abc123xyz"
+						}
+					]
+				},
+				"description": "Delete an asset from both Firebase Storage and Firestore metadata."
+			},
+			"response": [
+				{
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/assets/sample/asset_abc123xyz",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"sample",
+								"asset_abc123xyz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Asset deleted successfully\",\n    \"data\": {\n        \"id\": \"asset_abc123xyz\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "6. Get Signed URL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"path\": \"apps/sample/assets/images/logo_uuid-1234.png\",\n    \"expiresIn\": 60\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/assets/signed-url",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"assets",
+						"signed-url"
+					]
+				},
+				"description": "Generate a temporary signed URL for secure asset access. The URL expires after the specified time (default 60 minutes)."
+			},
+			"response": [
+				{
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"path\": \"apps/sample/assets/images/logo_uuid-1234.png\",\n    \"expiresIn\": 120\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/assets/signed-url",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								"signed-url"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"OK\",\n    \"data\": {\n        \"signedUrl\": \"https://storage.googleapis.com/wordfun-dcd3b.firebasestorage.app/apps/sample/assets/images/logo_uuid-1234.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=...\",\n        \"expiresIn\": 120\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "7. Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/../health",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"..",
+						"health"
+					]
+				},
+				"description": "Check if the API server is running."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		},
+		{
+			"key": "appId",
+			"value": "sample",
+			"type": "string"
+		}
+	]
+}
+

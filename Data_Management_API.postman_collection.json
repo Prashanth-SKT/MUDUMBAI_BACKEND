@@ -1,0 +1,523 @@
+{
+  "info": {
+    "name": "Data Management API",
+    "description": "Complete API collection for No-Code Data Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "appId",
+      "value": "myapp",
+      "type": "string"
+    },
+    {
+      "key": "appPrefix",
+      "value": "myapp",
+      "type": "string"
+    },
+    {
+      "key": "userId",
+      "value": "user-uid-123",
+      "type": "string"
+    },
+    {
+      "key": "schemaId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "recordId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Schema Management",
+      "item": [
+        {
+          "name": "1. Create Table Schema",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('schemaId', response.data.schemaId);",
+                  "    console.log('Schema ID saved:', response.data.schemaId);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"displayName\": \"Users\",\n  \"userId\": \"{{userId}}\",\n  \"fields\": [\n    {\n      \"name\": \"fullName\",\n      \"type\": \"text\",\n      \"required\": true,\n      \"options\": []\n    },\n    {\n      \"name\": \"email\",\n      \"type\": \"email\",\n      \"required\": true,\n      \"options\": []\n    },\n    {\n      \"name\": \"phone\",\n      \"type\": \"phone\",\n      \"required\": false,\n      \"options\": []\n    },\n    {\n      \"name\": \"role\",\n      \"type\": \"select\",\n      \"required\": true,\n      \"options\": [\"Admin\", \"Editor\", \"Viewer\"]\n    },\n    {\n      \"name\": \"status\",\n      \"type\": \"select\",\n      \"required\": false,\n      \"options\": [\"Active\", \"Inactive\"]\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-schemas/create",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-schemas", "create"]
+            }
+          }
+        },
+        {
+          "name": "2. List All Tables",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/data-schemas/{{appId}}?appPrefix={{appPrefix}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-schemas", "{{appId}}"],
+              "query": [
+                {
+                  "key": "appPrefix",
+                  "value": "{{appPrefix}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "3. Get Single Table Schema",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/data-schemas/{{appId}}/{{schemaId}}?appPrefix={{appPrefix}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-schemas", "{{appId}}", "{{schemaId}}"],
+              "query": [
+                {
+                  "key": "appPrefix",
+                  "value": "{{appPrefix}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "4. Delete Table Schema",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"userId\": \"{{userId}}\",\n  \"confirmDelete\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-schemas/{{schemaId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-schemas", "{{schemaId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Record CRUD",
+      "item": [
+        {
+          "name": "1. Create Single Record",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('recordId', response.data.id);",
+                  "    console.log('Record ID saved:', response.data.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"schemaId\": \"{{schemaId}}\",\n  \"userId\": \"{{userId}}\",\n  \"data\": {\n    \"fullName\": \"Ramesh Kumar\",\n    \"email\": \"ramesh@example.com\",\n    \"phone\": \"9876543210\",\n    \"role\": \"Admin\",\n    \"status\": \"Active\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/create",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "create"]
+            }
+          }
+        },
+        {
+          "name": "2. List Records (Paginated)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/data-records/list?appId={{appId}}&appPrefix={{appPrefix}}&schemaId={{schemaId}}&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "list"],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "{{appId}}"
+                },
+                {
+                  "key": "appPrefix",
+                  "value": "{{appPrefix}}"
+                },
+                {
+                  "key": "schemaId",
+                  "value": "{{schemaId}}"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc"
+                },
+                {
+                  "key": "searchQuery",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "3. Update Single Record",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"schemaId\": \"{{schemaId}}\",\n  \"userId\": \"{{userId}}\",\n  \"data\": {\n    \"phone\": \"9999888877\",\n    \"status\": \"Inactive\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/update/{{recordId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "update", "{{recordId}}"]
+            }
+          }
+        },
+        {
+          "name": "4. Delete Single Record",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"schemaId\": \"{{schemaId}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/delete/{{recordId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "delete", "{{recordId}}"]
+            }
+          }
+        },
+        {
+          "name": "5. Validate Record",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"schemaId\": \"{{schemaId}}\",\n  \"data\": {\n    \"fullName\": \"Test User\",\n    \"email\": \"invalid-email\",\n    \"phone\": \"123\",\n    \"role\": \"SuperAdmin\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/validate",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "validate"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bulk Operations",
+      "item": [
+        {
+          "name": "1. Bulk Create Records",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"schemaId\": \"{{schemaId}}\",\n  \"userId\": \"{{userId}}\",\n  \"records\": [\n    {\n      \"fullName\": \"Sita Devi\",\n      \"email\": \"sita@example.com\",\n      \"phone\": \"9123456789\",\n      \"role\": \"Editor\",\n      \"status\": \"Active\"\n    },\n    {\n      \"fullName\": \"Arjun Rao\",\n      \"email\": \"arjun@example.com\",\n      \"phone\": \"9988776655\",\n      \"role\": \"Viewer\",\n      \"status\": \"Inactive\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/bulk-create",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "bulk-create"]
+            }
+          }
+        },
+        {
+          "name": "2. Bulk Update Records",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"schemaId\": \"{{schemaId}}\",\n  \"userId\": \"{{userId}}\",\n  \"updates\": [\n    {\n      \"recordId\": \"rec_xyz789abc\",\n      \"data\": { \"status\": \"Inactive\" }\n    },\n    {\n      \"recordId\": \"rec_aaa111\",\n      \"data\": { \"role\": \"Admin\", \"status\": \"Active\" }\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/bulk-update",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "bulk-update"]
+            }
+          }
+        },
+        {
+          "name": "3. Bulk Delete Records",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"{{appId}}\",\n  \"appPrefix\": \"{{appPrefix}}\",\n  \"schemaId\": \"{{schemaId}}\",\n  \"recordIds\": [\"rec_xyz789abc\", \"rec_aaa111\", \"rec_bbb222\"]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/bulk-delete",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "bulk-delete"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CSV Import/Export",
+      "item": [
+        {
+          "name": "1. Import CSV - Create New Table",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "appId",
+                  "value": "{{appId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "appPrefix",
+                  "value": "{{appPrefix}}",
+                  "type": "text"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "createNewTable",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "displayName",
+                  "value": "Users",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/import-csv",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "import-csv"]
+            }
+          }
+        },
+        {
+          "name": "2. Import CSV - Append to Existing Table",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "appId",
+                  "value": "{{appId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "appPrefix",
+                  "value": "{{appPrefix}}",
+                  "type": "text"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "createNewTable",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "schemaId",
+                  "value": "{{schemaId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/data-records/import-csv",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "import-csv"]
+            }
+          }
+        },
+        {
+          "name": "3. Export CSV - All Records",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/data-records/export-csv?appId={{appId}}&appPrefix={{appPrefix}}&schemaId={{schemaId}}&includeSystemFields=false",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "export-csv"],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "{{appId}}"
+                },
+                {
+                  "key": "appPrefix",
+                  "value": "{{appPrefix}}"
+                },
+                {
+                  "key": "schemaId",
+                  "value": "{{schemaId}}"
+                },
+                {
+                  "key": "includeSystemFields",
+                  "value": "false"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "4. Export CSV - Selected Records",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/data-records/export-csv?appId={{appId}}&appPrefix={{appPrefix}}&schemaId={{schemaId}}&recordIds=rec_xyz789abc,rec_aaa111&includeSystemFields=true",
+              "host": ["{{baseUrl}}"],
+              "path": ["data-records", "export-csv"],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "{{appId}}"
+                },
+                {
+                  "key": "appPrefix",
+                  "value": "{{appPrefix}}"
+                },
+                {
+                  "key": "schemaId",
+                  "value": "{{schemaId}}"
+                },
+                {
+                  "key": "recordIds",
+                  "value": "rec_xyz789abc,rec_aaa111"
+                },
+                {
+                  "key": "includeSystemFields",
+                  "value": "true"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+

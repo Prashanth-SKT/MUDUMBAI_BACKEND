@@ -1,0 +1,305 @@
+{
+  "appName": "hanuma",
+  "dataSource": "Firestore via API",
+  "timestamp": "2025-12-25T22:00:00Z",
+  "collections": {
+    "pages": [
+      {
+        "id": "home",
+        "components": [
+          {
+            "id": "comp_1760875331014_3aoqge1az",
+            "type": "form",
+            "name": "Contact Us",
+            "appName": "hanuma",
+            "commonAttrs": {
+              "width": "100",
+              "height": "auto",
+              "paddingTop": "16",
+              "paddingBottom": "16",
+              "paddingLeft": "16",
+              "paddingRight": "16",
+              "marginTop": "0",
+              "marginBottom": "16",
+              "marginLeft": "0",
+              "marginRight": "0",
+              "backgroundColor": "transparent",
+              "borderRadius": "8",
+              "boxShadow": "none"
+            },
+            "specificAttrs": {
+              "formType": "Contact",
+              "title": "Contact Us",
+              "description": "Get in touch with us. We'd love to hear from you!",
+              "submitLabel": "Send Message",
+              "fields": [
+                {
+                  "id": "name",
+                  "label": "Your Name",
+                  "type": "text",
+                  "required": true,
+                  "validation": {
+                    "minLength": 2,
+                    "maxLength": 100,
+                    "customMessage": "Please enter your name"
+                  },
+                  "dataSource": {
+                    "type": "manual"
+                  },
+                  "visibility": true,
+                  "defaultValue": ""
+                },
+                {
+                  "id": "email",
+                  "label": "Email Address",
+                  "type": "email",
+                  "required": true,
+                  "validation": {
+                    "pattern": "email",
+                    "customMessage": "Please enter a valid email address"
+                  },
+                  "dataSource": {
+                    "type": "manual"
+                  },
+                  "visibility": true,
+                  "defaultValue": ""
+                },
+                {
+                  "id": "message",
+                  "label": "Message",
+                  "type": "textarea",
+                  "required": true,
+                  "validation": {
+                    "minLength": 10,
+                    "maxLength": 1000,
+                    "customMessage": "Please enter your message (at least 10 characters)"
+                  },
+                  "dataSource": {
+                    "type": "manual"
+                  },
+                  "visibility": true,
+                  "defaultValue": ""
+                }
+              ],
+              "ui": {
+                "themeTokens": "default",
+                "spacingHints": "responsive"
+              },
+              "actions": [
+                {
+                  "action": "showMessage",
+                  "title": "Thank You!",
+                  "message": "this is thank yu messdage",
+                  "buttonText": "Close",
+                  "autoClose": 0
+                }
+              ]
+            },
+            "createdAt": "2025-10-19T12:02:11.014Z",
+            "updatedAt": "2025-10-19T12:02:11.014Z"
+          }
+        ],
+        "docName": "home",
+        "metadata": {
+          "createdAt": "2025-10-19T11:57:27.081Z",
+          "version": "1.0.0",
+          "updatedAt": "2025-10-19T11:57:32.865Z"
+        },
+        "updatedBy": "user",
+        "appName": "hanuma",
+        "name": "home",
+        "themeId": "modern",
+        "savedAt": "2025-10-19T12:02:14.300Z",
+        "layoutId": "two-column",
+        "pageName": "home",
+        "updatedAt": "2025-10-19T12:02:14.309Z"
+      }
+    ],
+    "components": [
+      {
+        "id": "comp_1760678363464_c4z50042g",
+        "createdAt": "2025-10-17T05:19:23.464Z",
+        "appName": "hanuma",
+        "specificAttrs": {
+          "submitLabel": "Send Message",
+          "formType": "Contact",
+          "ui": {
+            "themeTokens": "default",
+            "spacingHints": "responsive"
+          },
+          "description": "Get in touch with us. We'd love to hear from you!",
+          "fields": [
+            {
+              "id": "name",
+              "label": "Your Name",
+              "type": "text",
+              "required": true,
+              "validation": {
+                "minLength": 2,
+                "maxLength": 100,
+                "customMessage": "Please enter your name"
+              },
+              "dataSource": {
+                "type": "manual"
+              },
+              "visibility": true,
+              "defaultValue": ""
+            },
+            {
+              "id": "email",
+              "label": "Email Address",
+              "type": "email",
+              "required": true,
+              "validation": {
+                "pattern": "email",
+                "customMessage": "Please enter a valid email address"
+              },
+              "dataSource": {
+                "type": "manual"
+              },
+              "visibility": true,
+              "defaultValue": ""
+            },
+            {
+              "id": "message",
+              "label": "Message",
+              "type": "textarea",
+              "required": true,
+              "validation": {
+                "minLength": 10,
+                "maxLength": 1000,
+                "customMessage": "Please enter your message (at least 10 characters)"
+              },
+              "dataSource": {
+                "type": "manual"
+              },
+              "visibility": true,
+              "defaultValue": ""
+            }
+          ],
+          "title": "Contact Us",
+          "actions": [
+            {
+              "action": "showMessage",
+              "title": "Thank You!",
+              "message": "Thank you for your submission! We have received your information and will get back to you soon.",
+              "buttonText": "Close",
+              "autoClose": 0
+            },
+            {
+              "action": "validateForm",
+              "showErrors": true,
+              "scrollToError": true,
+              "stopOnError": true
+            }
+          ]
+        },
+        "name": "Contact Us",
+        "commonAttrs": {
+          "boxShadow": "none",
+          "backgroundColor": "transparent",
+          "paddingRight": "16",
+          "marginLeft": "0",
+          "marginRight": "0",
+          "paddingBottom": "16",
+          "borderRadius": "8",
+          "width": "100",
+          "marginBottom": "16",
+          "paddingTop": "16",
+          "paddingLeft": "16",
+          "marginTop": "0",
+          "height": "auto"
+        },
+        "savedAt": "2025-10-17T05:19:23.476Z",
+        "category": "forms",
+        "type": "form",
+        "tags": [
+          "form",
+          "Contact",
+          "user-created"
+        ],
+        "updatedAt": "2025-10-17T05:19:23.476Z"
+      }
+    ],
+    "actions": [
+      {
+        "id": "openurl_1763621043847",
+        "actionType": "openPage",
+        "createdAt": "2025-11-20T06:44:03.847Z",
+        "triggerElement": "button",
+        "actionConfig": {
+          "newTab": true,
+          "url": "https://sukusalatechnologies.in/"
+        },
+        "elementConfig": {
+          "padding": "10px 20px",
+          "bgColor": "#3B82F6",
+          "borderRadius": "6px",
+          "width": "auto",
+          "fontSize": "16px",
+          "label": "Click Me",
+          "textColor": "#FFFFFF"
+        },
+        "appName": "hanuma",
+        "name": "OpenURL",
+        "actionId": "openurl_1763621043847",
+        "triggerEvent": "onClick",
+        "version": 1,
+        "reusable": true,
+        "updatedAt": "2025-11-20T06:44:03.894Z"
+      },
+      {
+        "id": "openurl_1763621043847_v2",
+        "actionType": "openPage",
+        "createdAt": "2025-11-20T06:47:35.206Z",
+        "triggerElement": "button",
+        "actionConfig": {
+          "newTab": true,
+          "url": "/validations"
+        },
+        "elementConfig": {
+          "padding": "10px 20px",
+          "bgColor": "#3B82F6",
+          "borderRadius": "6px",
+          "width": "auto",
+          "fontSize": "16px",
+          "label": "Click Me",
+          "textColor": "#FFFFFF"
+        },
+        "appName": "hanuma",
+        "name": "OpenURL",
+        "actionId": "openurl_1763621043847_v2",
+        "triggerEvent": "onClick",
+        "version": 2,
+        "reusable": true,
+        "updatedAt": "2025-11-20T06:47:35.287Z"
+      },
+      {
+        "id": "openurl_1763621043847_v2_v3",
+        "actionType": "openPage",
+        "createdAt": "2025-11-20T06:48:44.208Z",
+        "triggerElement": "button",
+        "actionConfig": {
+          "newTab": false,
+          "url": "/validations"
+        },
+        "elementConfig": {
+          "padding": "10px 20px",
+          "bgColor": "#3B82F6",
+          "borderRadius": "6px",
+          "width": "auto",
+          "fontSize": "16px",
+          "label": "Click Me",
+          "textColor": "#FFFFFF"
+        },
+        "appName": "hanuma",
+        "name": "OpenURL",
+        "actionId": "openurl_1763621043847_v2_v3",
+        "triggerEvent": "onClick",
+        "version": 3,
+        "reusable": true,
+        "updatedAt": "2025-11-20T06:48:44.253Z"
+      }
+    ]
+  }
+}

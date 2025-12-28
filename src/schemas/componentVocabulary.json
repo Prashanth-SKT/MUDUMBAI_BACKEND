@@ -1,0 +1,134 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-25",
+  "description": "Component vocabulary based on hanuma app structure - MUST use exact terminology",
+  
+  "componentTypes": {
+    "form": {
+      "description": "Form component with fields, validation, and submit actions",
+      "requiredAttrs": ["formType", "title", "description", "submitLabel", "fields", "ui", "actions"],
+      "example": "Contact form, signup form, survey form"
+    },
+    "button": {
+      "description": "Clickable button element with action trigger",
+      "requiredAttrs": ["label", "action", "trigger"],
+      "example": "Submit button, navigation button, CTA button"
+    },
+    "text": {
+      "description": "Text content (heading, paragraph, label)",
+      "requiredAttrs": ["content", "variant", "fontSize"],
+      "example": "Page title, description text, label"
+    },
+    "image": {
+      "description": "Image with source and alt text",
+      "requiredAttrs": ["src", "alt", "width", "height"],
+      "example": "Logo, hero image, product photo"
+    },
+    "card": {
+      "description": "Card container with title and content",
+      "requiredAttrs": ["title", "description", "content"],
+      "example": "Feature card, product card, info card"
+    },
+    "container": {
+      "description": "Generic container for layout",
+      "requiredAttrs": ["children", "layout"],
+      "example": "Section wrapper, content block"
+    }
+  },
+  
+  "commonAttrs": {
+    "description": "Standard styling attributes for ALL components",
+    "required": ["width", "height", "backgroundColor"],
+    "optional": [
+      "paddingTop", "paddingBottom", "paddingLeft", "paddingRight",
+      "marginTop", "marginBottom", "marginLeft", "marginRight",
+      "borderRadius", "boxShadow"
+    ],
+    "defaults": {
+      "width": "100",
+      "height": "auto",
+      "paddingTop": "16",
+      "paddingBottom": "16",
+      "paddingLeft": "16",
+      "paddingRight": "16",
+      "marginTop": "0",
+      "marginBottom": "16",
+      "marginLeft": "0",
+      "marginRight": "0",
+      "backgroundColor": "transparent",
+      "borderRadius": "8",
+      "boxShadow": "none"
+    }
+  },
+  
+  "actionTypes": {
+    "openPage": "Navigate to URL or internal route",
+    "showMessage": "Display notification/alert/modal",
+    "validateForm": "Run form validation checks",
+    "submitForm": "Submit form data to backend",
+    "navigateTo": "Navigate to internal route"
+  },
+  
+  "triggerEvents": {
+    "onClick": "Mouse click event",
+    "onChange": "Value change event",
+    "onSubmit": "Form submission event",
+    "onBlur": "Focus loss event",
+    "onFocus": "Focus gain event"
+  },
+  
+  "triggerElements": {
+    "button": "Button element",
+    "link": "Link/anchor element",
+    "form": "Form element",
+    "input": "Input field element"
+  },
+  
+  "layoutTypes": {
+    "two-column": "Two column grid layout",
+    "three-column": "Three column grid layout",
+    "hero-split": "Hero section with split content",
+    "grid-12": "12 column grid system",
+    "single-column": "Single column stack layout"
+  },
+  
+  "themeTypes": {
+    "modern": "Modern clean theme",
+    "classic": "Classic traditional theme",
+    "minimal": "Minimal theme",
+    "bold": "Bold colorful theme"
+  },
+  
+  "formTypes": {
+    "Contact": "Contact form with name, email, message",
+    "Signup": "User registration form",
+    "Login": "User login form",
+    "Survey": "Survey/feedback form",
+    "Newsletter": "Newsletter subscription form"
+  },
+  
+  "fieldTypes": {
+    "text": "Single-line text input",
+    "email": "Email input with validation",
+    "textarea": "Multi-line text input",
+    "number": "Numeric input",
+    "tel": "Phone number input",
+    "url": "URL input",
+    "select": "Dropdown selection",
+    "checkbox": "Checkbox input",
+    "radio": "Radio button input"
+  },
+  
+  "validationRules": {
+    "required": "Field must not be empty",
+    "minLength": "Minimum character count",
+    "maxLength": "Maximum character count",
+    "pattern": "Regex pattern (email, phone, etc.)",
+    "min": "Minimum numeric value",
+    "max": "Maximum numeric value",
+    "customMessage": "Custom error message"
+  }
+}
+
+
+

@@ -1,0 +1,455 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-25",
+  "description": "Page templates for different app types based on hanuma structure",
+  
+  "templates": {
+    "e-commerce": {
+      "name": "E-Commerce Store",
+      "description": "Online store with products, cart, and checkout",
+      "pages": [
+        {
+          "id": "home",
+          "name": "Home",
+          "layoutId": "two-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "hero-headline",
+              "contentKey": "home.headline",
+              "variant": "h1"
+            },
+            {
+              "type": "text",
+              "role": "hero-subheading",
+              "contentKey": "home.subheading",
+              "variant": "h3"
+            },
+            {
+              "type": "card",
+              "role": "featured-products",
+              "contentKey": "home.features",
+              "count": 3
+            },
+            {
+              "type": "form",
+              "role": "newsletter",
+              "preset": "newsletter"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "name": "Products",
+          "layoutId": "three-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "page-title",
+              "contentKey": "products.title",
+              "variant": "h2"
+            },
+            {
+              "type": "card",
+              "role": "product-grid",
+              "contentKey": "products.items",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "id": "about",
+          "name": "About",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "about-title",
+              "contentKey": "about.title",
+              "variant": "h2"
+            },
+            {
+              "type": "text",
+              "role": "about-content",
+              "contentKey": "about.content",
+              "variant": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "name": "Contact",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "contact-intro",
+              "contentKey": "contact.intro",
+              "variant": "h2"
+            },
+            {
+              "type": "form",
+              "role": "contact-form",
+              "preset": "contact"
+            }
+          ]
+        }
+      ]
+    },
+    
+    "booking": {
+      "name": "Booking Platform",
+      "description": "Service booking with calendar and appointments",
+      "pages": [
+        {
+          "id": "home",
+          "name": "Home",
+          "layoutId": "two-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "hero-headline",
+              "contentKey": "home.headline",
+              "variant": "h1"
+            },
+            {
+              "type": "card",
+              "role": "services-preview",
+              "contentKey": "home.services",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "id": "services",
+          "name": "Services",
+          "layoutId": "three-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "page-title",
+              "contentKey": "services.title",
+              "variant": "h2"
+            },
+            {
+              "type": "card",
+              "role": "service-list",
+              "contentKey": "services.items",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "id": "booking",
+          "name": "Booking",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "booking-title",
+              "contentKey": "booking.title",
+              "variant": "h2"
+            },
+            {
+              "type": "form",
+              "role": "booking-form",
+              "preset": "booking"
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "name": "Contact",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "contact-intro",
+              "contentKey": "contact.intro",
+              "variant": "h2"
+            },
+            {
+              "type": "form",
+              "role": "contact-form",
+              "preset": "contact"
+            }
+          ]
+        }
+      ]
+    },
+    
+    "portfolio": {
+      "name": "Portfolio Website",
+      "description": "Showcase projects and work",
+      "pages": [
+        {
+          "id": "home",
+          "name": "Home",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "hero-headline",
+              "contentKey": "home.headline",
+              "variant": "h1"
+            },
+            {
+              "type": "text",
+              "role": "hero-description",
+              "contentKey": "home.description",
+              "variant": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "projects",
+          "name": "Projects",
+          "layoutId": "three-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "page-title",
+              "contentKey": "projects.title",
+              "variant": "h2"
+            },
+            {
+              "type": "card",
+              "role": "project-grid",
+              "contentKey": "projects.items",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "id": "about",
+          "name": "About",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "about-title",
+              "contentKey": "about.title",
+              "variant": "h2"
+            },
+            {
+              "type": "text",
+              "role": "about-bio",
+              "contentKey": "about.bio",
+              "variant": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "name": "Contact",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "contact-intro",
+              "contentKey": "contact.intro",
+              "variant": "h2"
+            },
+            {
+              "type": "form",
+              "role": "contact-form",
+              "preset": "contact"
+            }
+          ]
+        }
+      ]
+    },
+    
+    "restaurant": {
+      "name": "Restaurant Website",
+      "description": "Menu, reservations, and location",
+      "pages": [
+        {
+          "id": "home",
+          "name": "Home",
+          "layoutId": "two-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "hero-headline",
+              "contentKey": "home.headline",
+              "variant": "h1"
+            },
+            {
+              "type": "text",
+              "role": "hero-description",
+              "contentKey": "home.description",
+              "variant": "paragraph"
+            },
+            {
+              "type": "card",
+              "role": "specialties",
+              "contentKey": "home.specialties",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "id": "menu",
+          "name": "Menu",
+          "layoutId": "two-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "menu-title",
+              "contentKey": "menu.title",
+              "variant": "h2"
+            },
+            {
+              "type": "card",
+              "role": "menu-items",
+              "contentKey": "menu.items",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "id": "reservations",
+          "name": "Reservations",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "reservation-title",
+              "contentKey": "reservations.title",
+              "variant": "h2"
+            },
+            {
+              "type": "form",
+              "role": "reservation-form",
+              "preset": "booking"
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "name": "Contact",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "contact-intro",
+              "contentKey": "contact.intro",
+              "variant": "h2"
+            },
+            {
+              "type": "form",
+              "role": "contact-form",
+              "preset": "contact"
+            }
+          ]
+        }
+      ]
+    },
+    
+    "blog": {
+      "name": "Blog Website",
+      "description": "Blog posts and articles",
+      "pages": [
+        {
+          "id": "home",
+          "name": "Home",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "blog-title",
+              "contentKey": "home.title",
+              "variant": "h1"
+            },
+            {
+              "type": "card",
+              "role": "recent-posts",
+              "contentKey": "home.recentPosts",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "id": "blog",
+          "name": "Blog",
+          "layoutId": "two-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "page-title",
+              "contentKey": "blog.title",
+              "variant": "h2"
+            },
+            {
+              "type": "card",
+              "role": "post-grid",
+              "contentKey": "blog.posts",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "id": "about",
+          "name": "About",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "about-title",
+              "contentKey": "about.title",
+              "variant": "h2"
+            },
+            {
+              "type": "text",
+              "role": "about-content",
+              "contentKey": "about.content",
+              "variant": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "name": "Contact",
+          "layoutId": "single-column",
+          "themeId": "modern",
+          "components": [
+            {
+              "type": "text",
+              "role": "contact-intro",
+              "contentKey": "contact.intro",
+              "variant": "h2"
+            },
+            {
+              "type": "form",
+              "role": "contact-form",
+              "preset": "contact"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+
+
+
