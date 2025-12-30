@@ -1,0 +1,224 @@
+{
+  "info": {
+    "name": "Process API",
+    "description": "Postman collection for business process management operations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "dbName",
+      "value": "jayram",
+      "type": "string"
+    },
+    {
+      "key": "appName",
+      "value": "Rama2",
+      "type": "string"
+    },
+    {
+      "key": "processId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Process Operations",
+      "item": [
+        {
+          "name": "1. List Processes (by app)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/processes/{{dbName}}/{{appName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["processes", "{{dbName}}", "{{appName}}"]
+            },
+            "description": "Get all processes for a specific app from the processes collection"
+          }
+        },
+        {
+          "name": "2. Get Process by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/processes/{{dbName}}/{{appName}}/{{processId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["processes", "{{dbName}}", "{{appName}}", "{{processId}}"]
+            },
+            "description": "Retrieve a specific process by its ID"
+          }
+        },
+        {
+          "name": "3. Create Process",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newId = json.id || (json.data && json.data.id);",
+                  "  if (newId) {",
+                  "    pm.collectionVariables.set('processId', newId);",
+                  "    console.log('Saved processId:', newId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": null,\n  \"name\": \"Onboarding\",\n  \"description\": \"Employee onboarding process with validation and routing\",\n  \"appName\": \"Rama2\",\n  \"status\": \"draft\",\n  \"steps\": [\n    {\n      \"id\": \"step_1767082778281\",\n      \"label\": \"Capture\",\n      \"description\": \"Capture the information\",\n      \"order\": 1,\n      \"preValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"onTrue\": \"continue\",\n        \"onTrueTargetStepId\": null,\n        \"onTrueTargetStepLabel\": null,\n        \"onTrueTargetProcessId\": null,\n        \"onFalse\": \"exit\",\n        \"onFalseTargetStepId\": null,\n        \"onFalseTargetStepLabel\": null,\n        \"onFalseTargetProcessId\": null,\n        \"preActions\": []\n      },\n      \"content\": {\n        \"type\": \"none\",\n        \"contentId\": null,\n        \"contentJSON\": null\n      },\n      \"postValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"routing\": {\n          \"onTrue\": {\n            \"action\": \"continue\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          },\n          \"onFalse\": {\n            \"action\": \"exit\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          }\n        },\n        \"postActions\": []\n      }\n    },\n    {\n      \"id\": \"step_1767083298943\",\n      \"label\": \"Review\",\n      \"description\": \"Review\",\n      \"order\": 2,\n      \"preValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"onTrue\": \"continue\",\n        \"onTrueTargetStepId\": null,\n        \"onTrueTargetStepLabel\": null,\n        \"onTrueTargetProcessId\": null,\n        \"onFalse\": \"exit\",\n        \"onFalseTargetStepId\": null,\n        \"onFalseTargetStepLabel\": null,\n        \"onFalseTargetProcessId\": null,\n        \"preActions\": []\n      },\n      \"content\": {\n        \"type\": \"none\",\n        \"contentId\": null,\n        \"contentJSON\": null\n      },\n      \"postValidation\": {\n        \"validationId\": \"TEMPLATE_1767035858335\",\n        \"validationJSON\": {\n          \"id\": \"TEMPLATE_1767035858335\",\n          \"ruleCategory\": \"VALIDATION\",\n          \"appName\": \"rama2\",\n          \"validationType\": \"WEEKEND_ONLY\",\n          \"errorMessage\": \"Not a weekend\",\n          \"description\": \"Template validation: Weekend Only (Sat-Sun)\",\n          \"type\": \"template\",\n          \"version\": \"1.0.0\",\n          \"name\": \"onlyifWeekend\",\n          \"status\": \"ACTIVE\"\n        },\n        \"routing\": {\n          \"onTrue\": {\n            \"action\": \"jumpToStep\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": \"Approve\",\n            \"targetProcessId\": null\n          },\n          \"onFalse\": {\n            \"action\": \"jumpToStep\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": \"Reject\",\n            \"targetProcessId\": null\n          }\n        },\n        \"postActions\": []\n      }\n    },\n    {\n      \"id\": \"step_1767083411002\",\n      \"label\": \"Approve\",\n      \"description\": \"Approved\",\n      \"order\": 3,\n      \"preValidation\": {\n        \"validationId\": \"RULE_1767036145538\",\n        \"validationJSON\": {\n          \"id\": \"RULE_1767036145538\",\n          \"ruleCategory\": \"BUSINESS_RULE\",\n          \"appName\": \"rama2\",\n          \"errorMessage\": \"Not eligible or Authorized\",\n          \"type\": \"business_rule\",\n          \"name\": \"BRule1\",\n          \"conditions\": [\n            {\n              \"operator\": \"CONTAINS\",\n              \"value\": \"Operations\",\n              \"logicalOperator\": \"IF\",\n              \"id\": 1,\n              \"field\": \"department\",\n              \"collection\": \"emp\"\n            }\n          ],\n          \"status\": \"ACTIVE\"\n        },\n        \"onTrue\": \"continue\",\n        \"onTrueTargetStepId\": null,\n        \"onTrueTargetStepLabel\": null,\n        \"onTrueTargetProcessId\": null,\n        \"onFalse\": \"exit\",\n        \"onFalseTargetStepId\": null,\n        \"onFalseTargetStepLabel\": null,\n        \"onFalseTargetProcessId\": null,\n        \"preActions\": []\n      },\n      \"content\": {\n        \"type\": \"none\",\n        \"contentId\": null,\n        \"contentJSON\": null\n      },\n      \"postValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"routing\": {\n          \"onTrue\": {\n            \"action\": \"continue\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          },\n          \"onFalse\": {\n            \"action\": \"exit\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          }\n        },\n        \"postActions\": []\n      }\n    }\n  ],\n  \"finalActions\": [],\n  \"version\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/processes/{{dbName}}/{{appName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["processes", "{{dbName}}", "{{appName}}"]
+            },
+            "description": "Create a new process with steps and triggers"
+          }
+        },
+        {
+          "name": "4. Update Process",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Onboarding Updated\",\n  \"description\": \"Updated employee onboarding process\",\n  \"status\": \"active\",\n  \"steps\": [\n    {\n      \"id\": \"step_1767082778281\",\n      \"label\": \"Capture\",\n      \"description\": \"Capture employee information\",\n      \"order\": 1,\n      \"preValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"onTrue\": \"continue\",\n        \"onFalse\": \"exit\",\n        \"preActions\": []\n      },\n      \"content\": {\n        \"type\": \"form\",\n        \"contentId\": \"employee_form\",\n        \"contentJSON\": null\n      },\n      \"postValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"routing\": {\n          \"onTrue\": {\n            \"action\": \"continue\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          },\n          \"onFalse\": {\n            \"action\": \"exit\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          }\n        },\n        \"postActions\": []\n      }\n    },\n    {\n      \"id\": \"step_1767083298943\",\n      \"label\": \"Review\",\n      \"description\": \"Manager review step\",\n      \"order\": 2,\n      \"preValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"onTrue\": \"continue\",\n        \"onFalse\": \"exit\",\n        \"preActions\": []\n      },\n      \"content\": {\n        \"type\": \"approval\",\n        \"contentId\": null,\n        \"contentJSON\": null\n      },\n      \"postValidation\": {\n        \"validationId\": null,\n        \"validationJSON\": null,\n        \"routing\": {\n          \"onTrue\": {\n            \"action\": \"continue\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          },\n          \"onFalse\": {\n            \"action\": \"exit\",\n            \"targetStepId\": null,\n            \"targetStepLabel\": null,\n            \"targetProcessId\": null\n          }\n        },\n        \"postActions\": []\n      }\n    }\n  ],\n  \"finalActions\": []\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/processes/{{dbName}}/{{appName}}/{{processId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["processes", "{{dbName}}", "{{appName}}", "{{processId}}"]
+            },
+            "description": "Update an existing process configuration"
+          }
+        },
+        {
+          "name": "5. Delete Process",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/processes/{{dbName}}/{{appName}}/{{processId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["processes", "{{dbName}}", "{{appName}}", "{{processId}}"]
+            },
+            "description": "Delete a process from the system"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Example Process Payloads",
+      "item": [
+        {
+          "name": "Create Approval Process",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newId = json.id || (json.data && json.data.id);",
+                  "  if (newId) {",
+                  "    pm.collectionVariables.set('processId', newId);",
+                  "    console.log('Saved processId:', newId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Document Approval\",\n  \"type\": \"approval\",\n  \"description\": \"Multi-level document approval process\",\n  \"steps\": [\n    {\n      \"id\": 1,\n      \"name\": \"Manager Review\",\n      \"type\": \"approval\",\n      \"config\": {\n        \"approver\": \"manager\",\n        \"timeout\": \"48h\",\n        \"escalateTo\": \"senior_manager\"\n      }\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Finance Approval\",\n      \"type\": \"approval\",\n      \"config\": {\n        \"approver\": \"finance_team\",\n        \"requiredApprovals\": 2,\n        \"timeout\": \"72h\"\n      }\n    },\n    {\n      \"id\": 3,\n      \"name\": \"Final Sign-off\",\n      \"type\": \"approval\",\n      \"config\": {\n        \"approver\": \"director\",\n        \"timeout\": \"24h\"\n      }\n    }\n  ],\n  \"triggers\": [\n    {\n      \"type\": \"manual\",\n      \"action\": \"submit_document\"\n    }\n  ],\n  \"status\": \"active\",\n  \"priority\": \"medium\",\n  \"createdBy\": \"postman-user\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/processes/{{dbName}}/{{appName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["processes", "{{dbName}}", "{{appName}}"]
+            },
+            "description": "Example: Multi-level approval workflow"
+          }
+        },
+        {
+          "name": "Create Data Sync Process",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newId = json.id || (json.data && json.data.id);",
+                  "  if (newId) {",
+                  "    pm.collectionVariables.set('processId', newId);",
+                  "    console.log('Saved processId:', newId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Daily Data Sync\",\n  \"type\": \"automation\",\n  \"description\": \"Synchronize data between systems daily\",\n  \"steps\": [\n    {\n      \"id\": 1,\n      \"name\": \"Fetch Source Data\",\n      \"type\": \"api_call\",\n      \"config\": {\n        \"endpoint\": \"https://api.source.com/data\",\n        \"method\": \"GET\",\n        \"auth\": \"bearer_token\"\n      }\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Transform Data\",\n      \"type\": \"script\",\n      \"config\": {\n        \"function\": \"transformToDestinationFormat\",\n        \"validations\": [\"required_fields\", \"data_types\"]\n      }\n    },\n    {\n      \"id\": 3,\n      \"name\": \"Update Destination\",\n      \"type\": \"api_call\",\n      \"config\": {\n        \"endpoint\": \"https://api.destination.com/update\",\n        \"method\": \"POST\",\n        \"retries\": 3\n      }\n    },\n    {\n      \"id\": 4,\n      \"name\": \"Send Report\",\n      \"type\": \"notification\",\n      \"config\": {\n        \"type\": \"email\",\n        \"to\": \"admin@example.com\",\n        \"template\": \"sync_report\"\n      }\n    }\n  ],\n  \"triggers\": [\n    {\n      \"type\": \"schedule\",\n      \"cron\": \"0 2 * * *\",\n      \"timezone\": \"UTC\"\n    }\n  ],\n  \"status\": \"active\",\n  \"priority\": \"high\",\n  \"createdBy\": \"postman-user\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/processes/{{dbName}}/{{appName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["processes", "{{dbName}}", "{{appName}}"]
+            },
+            "description": "Example: Scheduled data synchronization process"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+

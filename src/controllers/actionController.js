@@ -21,6 +21,14 @@ import firestoreService from "../services/firestoreService.js";
 import logger from "../services/loggerService.js";
 
 /**
+ * Normalize app name to collection prefix
+ * Examples: "Rama2" -> "rama2", "My App" -> "myapp"
+ */
+const normalizeAppName = (appName) => {
+  return appName.trim().toLowerCase().replace(/[^a-z0-9]+/g, "");
+};
+
+/**
  * POST /api/actions/save
  * ======================
  * Save or update an action in the action library
@@ -44,7 +52,8 @@ export const saveAction = async (req, res, next) => {
     const { appName, actionId, actionData } = req.body || {};
     requireFields({ appName, actionId, actionData }, ["appName", "actionId", "actionData"]);
 
-    const collectionName = `${appName}_actions`;
+    const appPrefix = normalizeAppName(appName);
+    const collectionName = `${appPrefix}_actions`;
 
     // Add metadata
     const enrichedData = {
@@ -88,7 +97,8 @@ export const getActionsByApp = async (req, res, next) => {
     const { appName } = req.params;
     requireFields({ appName }, ["appName"]);
 
-    const collectionName = `${appName}_actions`;
+    const appPrefix = normalizeAppName(appName);
+    const collectionName = `${appPrefix}_actions`;
     const result = await firestoreService.listDocs(collectionName);
 
     if (!result.success) {
@@ -119,7 +129,8 @@ export const getAction = async (req, res, next) => {
     const { appName, actionId } = req.params;
     requireFields({ appName, actionId }, ["appName", "actionId"]);
 
-    const collectionName = `${appName}_actions`;
+    const appPrefix = normalizeAppName(appName);
+    const collectionName = `${appPrefix}_actions`;
     const result = await firestoreService.getDoc(collectionName, actionId);
 
     if (!result.success || !result.data) {
@@ -147,7 +158,8 @@ export const deleteAction = async (req, res, next) => {
     const { appName, actionId } = req.params;
     requireFields({ appName, actionId }, ["appName", "actionId"]);
 
-    const collectionName = `${appName}_actions`;
+    const appPrefix = normalizeAppName(appName);
+    const collectionName = `${appPrefix}_actions`;
     const result = await firestoreService.deleteDoc(collectionName, actionId);
 
     if (!result.success) {
@@ -175,7 +187,8 @@ export const getActionsByTag = async (req, res, next) => {
     const { appName, tag } = req.params;
     requireFields({ appName, tag }, ["appName", "tag"]);
 
-    const collectionName = `${appName}_actions`;
+    const appPrefix = normalizeAppName(appName);
+    const collectionName = `${appPrefix}_actions`;
     const result = await firestoreService.listDocs(collectionName);
 
     if (!result.success) {

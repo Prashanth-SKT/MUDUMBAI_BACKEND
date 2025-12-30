@@ -657,3 +657,58 @@
 [28/12/2025, 15:43:01] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
 [28/12/2025, 15:43:01] [AssetController] List request received {"appId":"myshopy"}
 [28/12/2025, 15:43:01] [AssetController] Assets listed successfully {"appId":"myshopy","count":3}
+[28/12/2025, 17:21:49] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[28/12/2025, 21:16:00] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[28/12/2025, 21:45:14] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[28/12/2025, 22:16:16] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[29/12/2025, 12:31:32] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[29/12/2025, 12:31:32] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[29/12/2025, 12:50:55] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[29/12/2025, 15:35:32] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[29/12/2025, 23:15:30] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:20:22] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:20:27] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:20:32] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:20:40] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:20:45] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:20:53] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:20:59] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:21:05] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:21:09] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:21:14] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:21:19] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:21:24] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:21:45] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 24:42:20] [AssetController] List request received {"appId":"Rama2"}
+[30/12/2025, 24:42:20] [AssetController] Assets listed successfully {"appId":"Rama2","count":0}
+[30/12/2025, 24:42:20] [AssetController] List request received {"appId":"Rama2"}
+[30/12/2025, 24:42:20] [AssetController] Assets listed successfully {"appId":"Rama2","count":0}
+[30/12/2025, 24:42:41] [AssetController] Upload request received {"appId":"Rama2","fileName":"img1.jpeg"}
+[30/12/2025, 24:42:41] [AssetService] Uploading asset {"originalName":"img1.jpeg","appId":"Rama2","mimeType":"image/jpeg"}
+[30/12/2025, 24:42:45] [AssetService] Asset uploaded successfully {"filePath":"apps/Rama2/assets/images/img1_8daed415-1e9d-4735-a146-e2ba3ed4d8a9.jpeg","size":"19574","assetType":"images"}
+[30/12/2025, 24:42:46] [AssetController] Asset uploaded and metadata saved {"assetId":"71moQltL9sLSA5XsolpF","appId":"Rama2"}
+[30/12/2025, 24:43:18] [AssetController] Upload request received {"appId":"Rama2","fileName":"img2.jpeg"}
+[30/12/2025, 24:43:18] [AssetService] Uploading asset {"originalName":"img2.jpeg","appId":"Rama2","mimeType":"image/jpeg"}
+[30/12/2025, 24:43:21] [AssetService] Asset uploaded successfully {"filePath":"apps/Rama2/assets/images/img2_00cc3bd2-540b-49e2-a3bd-800c73699f4b.jpeg","size":"14235","assetType":"images"}
+[30/12/2025, 24:43:22] [AssetController] Asset uploaded and metadata saved {"assetId":"ivvUAtsXtypvv3jWiHzP","appId":"Rama2"}
+[30/12/2025, 24:43:38] [AssetController] Upload request received {"appId":"Rama2","fileName":"img3.jpeg"}
+[30/12/2025, 24:43:38] [AssetService] Uploading asset {"originalName":"img3.jpeg","appId":"Rama2","mimeType":"image/jpeg"}
+[30/12/2025, 24:43:42] [AssetService] Asset uploaded successfully {"filePath":"apps/Rama2/assets/images/img3_71925a43-128f-44ea-9d17-13aef2d50e9a.jpeg","size":"15906","assetType":"images"}
+[30/12/2025, 24:43:43] [AssetController] Asset uploaded and metadata saved {"assetId":"nYzz4Em5dhhOEVM22zK5","appId":"Rama2"}
+[30/12/2025, 24:46:55] [AssetController] List request received {"appId":"Rama2"}
+[30/12/2025, 24:46:55] [AssetController] Assets listed successfully {"appId":"Rama2","count":3}
+[30/12/2025, 24:46:55] [AssetController] List request received {"appId":"Rama2"}
+[30/12/2025, 24:46:55] [AssetController] Assets listed successfully {"appId":"Rama2","count":3}
+[30/12/2025, 01:26:23] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 01:26:36] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 01:26:49] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 01:26:54] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 01:28:06] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 02:16:46] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 02:20:08] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 10:36:27] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 13:13:35] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 14:33:02] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 14:33:11] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 14:36:20] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"
+[30/12/2025, 14:36:41] [AssetService] Initialized with bucket: "wordfun-dcd3b.firebasestorage.app"

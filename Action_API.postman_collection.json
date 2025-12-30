@@ -1,0 +1,336 @@
+{
+  "info": {
+    "name": "Action API",
+    "description": "Postman collection for Action Library operations - save, retrieve, and manage reusable actions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "appName",
+      "value": "sample",
+      "type": "string"
+    },
+    {
+      "key": "actionId",
+      "value": "welcome_msg_v1",
+      "type": "string"
+    },
+    {
+      "key": "tag",
+      "value": "navigation",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Action Library Operations",
+      "item": [
+        {
+          "name": "1. Save Action",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newActionId = json.actionId || (json.data && json.data.actionId);",
+                  "  if (newActionId) {",
+                  "    pm.collectionVariables.set('actionId', newActionId);",
+                  "    console.log('Saved actionId:', newActionId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appName\": \"{{appName}}\",\n  \"actionId\": \"{{actionId}}\",\n  \"actionData\": {\n    \"name\": \"Welcome Message\",\n    \"description\": \"Display welcome message to new users\",\n    \"type\": \"notification\",\n    \"trigger\": \"onLoad\",\n    \"config\": {\n      \"message\": \"Welcome to our application!\",\n      \"duration\": 5000,\n      \"position\": \"top-right\",\n      \"style\": \"success\"\n    },\n    \"tags\": [\"notification\", \"onboarding\", \"welcome\"],\n    \"category\": \"User Experience\",\n    \"priority\": \"medium\",\n    \"enabled\": true,\n    \"metadata\": {\n      \"author\": \"postman-user\",\n      \"version\": \"1.0\",\n      \"notes\": \"Shows welcome notification on app load\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/actions/save",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "save"]
+            },
+            "description": "Save or update an action in the action library. If the actionId exists, it will be updated; otherwise, a new action is created."
+          }
+        },
+        {
+          "name": "2. Get All Actions (by app)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actions/{{appName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "{{appName}}"]
+            },
+            "description": "Retrieve all actions for a specific app from the action library. Excludes internal _init documents."
+          }
+        },
+        {
+          "name": "3. Get Action by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actions/{{appName}}/{{actionId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "{{appName}}", "{{actionId}}"]
+            },
+            "description": "Retrieve a specific action by its ID from the action library."
+          }
+        },
+        {
+          "name": "4. Get Actions by Tag",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actions/{{appName}}/by-tag/{{tag}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "{{appName}}", "by-tag", "{{tag}}"]
+            },
+            "description": "Retrieve all actions that contain a specific tag. Useful for filtering actions by category or functionality."
+          }
+        },
+        {
+          "name": "5. Delete Action",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actions/{{appName}}/{{actionId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "{{appName}}", "{{actionId}}"]
+            },
+            "description": "Delete a specific action from the action library."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Example Action Payloads",
+      "item": [
+        {
+          "name": "Save Navigation Action",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newActionId = json.actionId || (json.data && json.data.actionId);",
+                  "  if (newActionId) {",
+                  "    pm.collectionVariables.set('actionId', newActionId);",
+                  "    console.log('Saved actionId:', newActionId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appName\": \"{{appName}}\",\n  \"actionId\": \"navigate_to_dashboard\",\n  \"actionData\": {\n    \"name\": \"Navigate to Dashboard\",\n    \"description\": \"Navigate user to main dashboard page\",\n    \"type\": \"navigation\",\n    \"trigger\": \"onClick\",\n    \"config\": {\n      \"route\": \"/dashboard\",\n      \"method\": \"push\",\n      \"params\": {},\n      \"preserveScroll\": false\n    },\n    \"tags\": [\"navigation\", \"routing\", \"dashboard\"],\n    \"category\": \"Navigation\",\n    \"priority\": \"high\",\n    \"enabled\": true,\n    \"metadata\": {\n      \"author\": \"postman-user\",\n      \"version\": \"1.0\",\n      \"notes\": \"Primary navigation action to dashboard\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/actions/save",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "save"]
+            },
+            "description": "Example: Save a navigation action"
+          }
+        },
+        {
+          "name": "Save API Call Action",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newActionId = json.actionId || (json.data && json.data.actionId);",
+                  "  if (newActionId) {",
+                  "    pm.collectionVariables.set('actionId', newActionId);",
+                  "    console.log('Saved actionId:', newActionId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appName\": \"{{appName}}\",\n  \"actionId\": \"fetch_user_profile\",\n  \"actionData\": {\n    \"name\": \"Fetch User Profile\",\n    \"description\": \"Load user profile data from API\",\n    \"type\": \"api\",\n    \"trigger\": \"manual\",\n    \"config\": {\n      \"method\": \"GET\",\n      \"endpoint\": \"/api/users/profile\",\n      \"headers\": {\n        \"Authorization\": \"Bearer {{token}}\"\n      },\n      \"params\": {},\n      \"onSuccess\": \"showSuccessToast\",\n      \"onError\": \"showErrorToast\",\n      \"cacheResponse\": true,\n      \"cacheDuration\": 300000\n    },\n    \"tags\": [\"api\", \"user\", \"profile\", \"data-fetch\"],\n    \"category\": \"Data Operations\",\n    \"priority\": \"high\",\n    \"enabled\": true,\n    \"metadata\": {\n      \"author\": \"postman-user\",\n      \"version\": \"1.0\",\n      \"notes\": \"Fetches and caches user profile data\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/actions/save",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "save"]
+            },
+            "description": "Example: Save an API call action"
+          }
+        },
+        {
+          "name": "Save Form Submission Action",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newActionId = json.actionId || (json.data && json.data.actionId);",
+                  "  if (newActionId) {",
+                  "    pm.collectionVariables.set('actionId', newActionId);",
+                  "    console.log('Saved actionId:', newActionId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appName\": \"{{appName}}\",\n  \"actionId\": \"submit_contact_form\",\n  \"actionData\": {\n    \"name\": \"Submit Contact Form\",\n    \"description\": \"Submit contact form with validation\",\n    \"type\": \"form\",\n    \"trigger\": \"onSubmit\",\n    \"config\": {\n      \"formId\": \"contactForm\",\n      \"validationRules\": {\n        \"email\": \"required|email\",\n        \"name\": \"required|min:2\",\n        \"message\": \"required|min:10\"\n      },\n      \"endpoint\": \"/api/contact/submit\",\n      \"method\": \"POST\",\n      \"successMessage\": \"Thank you! We'll get back to you soon.\",\n      \"errorMessage\": \"Failed to submit form. Please try again.\",\n      \"redirectOnSuccess\": \"/thank-you\",\n      \"clearOnSuccess\": true\n    },\n    \"tags\": [\"form\", \"submission\", \"contact\", \"validation\"],\n    \"category\": \"Form Operations\",\n    \"priority\": \"medium\",\n    \"enabled\": true,\n    \"metadata\": {\n      \"author\": \"postman-user\",\n      \"version\": \"1.0\",\n      \"notes\": \"Handles contact form submission with validation\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/actions/save",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "save"]
+            },
+            "description": "Example: Save a form submission action"
+          }
+        },
+        {
+          "name": "Save Modal Action",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newActionId = json.actionId || (json.data && json.data.actionId);",
+                  "  if (newActionId) {",
+                  "    pm.collectionVariables.set('actionId', newActionId);",
+                  "    console.log('Saved actionId:', newActionId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appName\": \"{{appName}}\",\n  \"actionId\": \"show_confirmation_modal\",\n  \"actionData\": {\n    \"name\": \"Show Confirmation Modal\",\n    \"description\": \"Display confirmation dialog before action\",\n    \"type\": \"modal\",\n    \"trigger\": \"manual\",\n    \"config\": {\n      \"modalType\": \"confirmation\",\n      \"title\": \"Confirm Action\",\n      \"message\": \"Are you sure you want to proceed?\",\n      \"confirmText\": \"Yes, Continue\",\n      \"cancelText\": \"Cancel\",\n      \"confirmAction\": \"proceedWithAction\",\n      \"cancelAction\": \"closeModal\",\n      \"variant\": \"warning\",\n      \"closeOnBackdrop\": false\n    },\n    \"tags\": [\"modal\", \"confirmation\", \"ui\", \"dialog\"],\n    \"category\": \"UI Components\",\n    \"priority\": \"medium\",\n    \"enabled\": true,\n    \"metadata\": {\n      \"author\": \"postman-user\",\n      \"version\": \"1.0\",\n      \"notes\": \"Reusable confirmation modal action\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/actions/save",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "save"]
+            },
+            "description": "Example: Save a modal action"
+          }
+        },
+        {
+          "name": "Save State Update Action",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newActionId = json.actionId || (json.data && json.data.actionId);",
+                  "  if (newActionId) {",
+                  "    pm.collectionVariables.set('actionId', newActionId);",
+                  "    console.log('Saved actionId:', newActionId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appName\": \"{{appName}}\",\n  \"actionId\": \"update_theme_preference\",\n  \"actionData\": {\n    \"name\": \"Update Theme Preference\",\n    \"description\": \"Toggle between light and dark theme\",\n    \"type\": \"state\",\n    \"trigger\": \"onClick\",\n    \"config\": {\n      \"stateKey\": \"theme\",\n      \"operation\": \"toggle\",\n      \"values\": [\"light\", \"dark\"],\n      \"persist\": true,\n      \"storageType\": \"localStorage\",\n      \"callback\": \"applyThemeStyles\",\n      \"scope\": \"global\"\n    },\n    \"tags\": [\"state\", \"theme\", \"preferences\", \"ui\"],\n    \"category\": \"State Management\",\n    \"priority\": \"medium\",\n    \"enabled\": true,\n    \"metadata\": {\n      \"author\": \"postman-user\",\n      \"version\": \"1.0\",\n      \"notes\": \"Toggles theme and persists to localStorage\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/actions/save",
+              "host": ["{{baseUrl}}"],
+              "path": ["actions", "save"]
+            },
+            "description": "Example: Save a state update action"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+

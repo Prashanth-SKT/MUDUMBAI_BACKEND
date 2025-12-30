@@ -186,3 +186,6 @@ If you continue to see errors after enabling Firebase Storage:
 3. Check the server logs for detailed error messages
 4. Ensure the project ID matches: `wordfun-dcd3b`
 
+
+
+

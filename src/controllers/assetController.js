@@ -11,6 +11,14 @@ import { logger } from '../utils/logger.js';
 import { ok, created, fail } from '../utils/responseHandler.js';
 
 /**
+ * Normalize app name to collection prefix
+ * Examples: "Rama2" -> "rama2", "My App" -> "myapp"
+ */
+const normalizeAppName = (appName) => {
+  return appName.trim().toLowerCase().replace(/[^a-z0-9]+/g, "");
+};
+
+/**
  * Upload a new asset
  * POST /api/assets/upload
  * Body: multipart/form-data with file, appId, description, uploadedBy
@@ -43,7 +51,8 @@ export const uploadAsset = async (req, res) => {
     );
 
     // Store metadata in Firestore
-    const collectionName = `${appId}_Assets`;
+    const appPrefix = normalizeAppName(appId);
+    const collectionName = `${appPrefix}_assets`;
     const assetRef = db.collection(collectionName).doc();
     
     await assetRef.set({
@@ -84,7 +93,8 @@ export const listAssets = async (req, res) => {
     }
 
     // Get metadata from Firestore
-    const collectionName = `${appId}_Assets`;
+    const appPrefix = normalizeAppName(appId);
+    const collectionName = `${appPrefix}_assets`;
     let query = db.collection(collectionName);
     
     // Filter by asset type if specified
@@ -125,7 +135,8 @@ export const getAsset = async (req, res) => {
       return fail(res, 400, 'appId and assetId are required');
     }
 
-    const collectionName = `${appId}_Assets`;
+    const appPrefix = normalizeAppName(appId);
+    const collectionName = `${appPrefix}_assets`;
     const doc = await db.collection(collectionName).doc(assetId).get();
 
     if (!doc.exists) {
@@ -156,7 +167,8 @@ export const deleteAsset = async (req, res) => {
     }
 
     // Get asset metadata from Firestore
-    const collectionName = `${appId}_Assets`;
+    const appPrefix = normalizeAppName(appId);
+    const collectionName = `${appPrefix}_assets`;
     const doc = await db.collection(collectionName).doc(assetId).get();
 
     if (!doc.exists) {
@@ -219,7 +231,8 @@ export const updateAssetMetadata = async (req, res) => {
       return fail(res, 400, 'appId and assetId are required');
     }
 
-    const collectionName = `${appId}_Assets`;
+    const appPrefix = normalizeAppName(appId);
+    const collectionName = `${appPrefix}_assets`;
     const docRef = db.collection(collectionName).doc(assetId);
     const doc = await docRef.get();
 

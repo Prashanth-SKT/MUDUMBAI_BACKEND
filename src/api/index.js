@@ -34,6 +34,8 @@ import authRoutes from "./routes/authRoutes.js";
 import validationRoutes from "./routes/validationRoutes.js";
 // 🔧 added by Claude on 2025-11-16 – reason: import validation template routes for system templates
 import validationTemplateRoutes from "./routes/validationTemplateRoutes.js";
+// 🔧 added on 2025-12-30 – reason: import process routes for business process management
+import processRoutes from "./routes/processRoutes.js";
 // 🔧 added by Claude on 2025-11-16 – reason: import asset routes for Firebase Storage asset management
 import assetRoutes from "./routes/assetRoutes.js";
 // 🔧 added on 2025-12-27 – reason: import data management routes for no-code data tables (schema, records, bulk, CSV)
@@ -57,6 +59,8 @@ router.use("/logs",logRoutes);
 router.use("/validations", validationRoutes); // Custom business validation operations
 // 🔧 added by Claude on 2025-11-16 – reason: mount validation template routes at /api/validation-templates
 router.use("/validation-templates", validationTemplateRoutes); // System validation templates
+// 🔧 added on 2025-12-30 – reason: mount process routes at /api/processes
+router.use("/processes", processRoutes); // Business process management operations
 // 🔧 added by Claude on 2025-11-16 – reason: mount asset routes at /api/assets
 router.use("/assets", assetRoutes); // Asset management operations
 // 🔧 added on 2025-12-27 – reason: mount data management routes (schema, records, bulk operations, CSV)

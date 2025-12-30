@@ -1,0 +1,265 @@
+{
+  "info": {
+    "name": "Validation API",
+    "description": "Postman collection for app-level validations and system validation templates",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "dbName",
+      "value": "jayram",
+      "type": "string"
+    },
+    {
+      "key": "appName",
+      "value": "sample",
+      "type": "string"
+    },
+    {
+      "key": "validationId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "templateId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "App Validations",
+      "item": [
+        {
+          "name": "1. List Validations (by app)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validations/{{dbName}}/{{appName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validations", "{{dbName}}", "{{appName}}"]
+            }
+          }
+        },
+        {
+          "name": "2. Get Validation by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validations/{{dbName}}/{{appName}}/{{validationId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validations", "{{dbName}}", "{{appName}}", "{{validationId}}"]
+            }
+          }
+        },
+        {
+          "name": "3. Create Validation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newId = json.id || (json.data && json.data.id);",
+                  "  if (newId) {",
+                  "    pm.collectionVariables.set('validationId', newId);",
+                  "    console.log('Saved validationId:', newId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Show Admin Banner\",\n  \"type\": \"visibility\",\n  \"description\": \"Show banner only when user role is admin\",\n  \"conditions\": [\n    {\n      \"id\": 1,\n      \"logicalOperator\": \"IF\",\n      \"collection\": \"users\",\n      \"field\": \"role\",\n      \"operator\": \"EQUALS\",\n      \"value\": \"admin\"\n    }\n  ],\n  \"successMessage\": \"Visible for admins\",\n  \"errorMessage\": \"Hidden for non-admins\",\n  \"severity\": \"info\",\n  \"targetComponentId\": \"headerBanner\",\n  \"createdBy\": \"postman-user\",\n  \"metadata\": {\n    \"notes\": \"Sample payload; adjust to your app's schema\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/validations/{{dbName}}/{{appName}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validations", "{{dbName}}", "{{appName}}"]
+            }
+          }
+        },
+        {
+          "name": "4. Update Validation",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Updated rule for admin-only banner\",\n  \"conditions\": [\n    {\n      \"id\": 1,\n      \"logicalOperator\": \"IF\",\n      \"collection\": \"users\",\n      \"field\": \"role\",\n      \"operator\": \"IN\",\n      \"value\": [\"admin\", \"owner\"]\n    }\n  ],\n  \"successMessage\": \"Visible for admins/owners\",\n  \"errorMessage\": \"Hidden for others\",\n  \"updatedBy\": \"postman-user\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/validations/{{dbName}}/{{appName}}/{{validationId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validations", "{{dbName}}", "{{appName}}", "{{validationId}}"]
+            }
+          }
+        },
+        {
+          "name": "5. Delete Validation",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validations/{{dbName}}/{{appName}}/{{validationId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validations", "{{dbName}}", "{{appName}}", "{{validationId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "System Validation Templates",
+      "item": [
+        {
+          "name": "1. List Templates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validation-templates",
+              "host": ["{{baseUrl}}"],
+              "path": ["validation-templates"]
+            }
+          }
+        },
+        {
+          "name": "2. Get Template by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validation-templates/{{templateId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validation-templates", "{{templateId}}"]
+            }
+          }
+        },
+        {
+          "name": "3. Create Template",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  const newId = json.id || (json.data && json.data.id);",
+                  "  if (newId) {",
+                  "    pm.collectionVariables.set('templateId', newId);",
+                  "    console.log('Saved templateId:', newId);",
+                  "  }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"templateName\": \"Date Range\",\n  \"category\": \"STATIC\",\n  \"description\": \"Show component only within a date range\",\n  \"conditions\": [\n    {\n      \"id\": 1,\n      \"logicalOperator\": \"IF\",\n      \"collection\": \"system\",\n      \"field\": \"currentDate\",\n      \"operator\": \"BETWEEN\",\n      \"value\": [\"2025-01-01\", \"2025-12-31\"]\n    }\n  ],\n  \"errorMessage\": \"Not available during this period\",\n  \"successMessage\": \"Within allowed period\",\n  \"warningMessage\": \"Limited time\",\n  \"fallbackText\": \"Available soon\",\n  \"fallbackComponent\": \"\",\n  \"hideSpace\": false,\n  \"isSystem\": false,\n  \"createdBy\": \"postman-user\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/validation-templates",
+              "host": ["{{baseUrl}}"],
+              "path": ["validation-templates"]
+            }
+          }
+        },
+        {
+          "name": "4. Update Template",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Updated date range rule\",\n  \"conditions\": [\n    {\n      \"id\": 1,\n      \"logicalOperator\": \"IF\",\n      \"collection\": \"system\",\n      \"field\": \"currentDate\",\n      \"operator\": \"BETWEEN\",\n      \"value\": [\"2025-01-01\", \"2026-01-31\"]\n    }\n  ],\n  \"warningMessage\": \"Extended for the new year\",\n  \"updatedBy\": \"postman-user\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/validation-templates/{{templateId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validation-templates", "{{templateId}}"]
+            }
+          }
+        },
+        {
+          "name": "5. Delete Template (non-system only)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validation-templates/{{templateId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["validation-templates", "{{templateId}}"]
+            }
+          }
+        },
+        {
+          "name": "6. Increment Template Usage",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validation-templates/{{templateId}}/use",
+              "host": ["{{baseUrl}}"],
+              "path": ["validation-templates", "{{templateId}}", "use"]
+            }
+          }
+        },
+        {
+          "name": "7. Initialize Default System Templates",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/validation-templates/init-defaults/seed",
+              "host": ["{{baseUrl}}"],
+              "path": ["validation-templates", "init-defaults", "seed"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+
